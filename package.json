@@ -1,0 +1,33 @@
+{
+  "name": "ai-ux-portfolio",
+  "version": "1.0.0",
+  "description": "A modern portfolio website for AI and UX Research professionals",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000 --open=/index.html",
+    "build": "echo 'No build process needed - static files only'",
+    "preview": "npx serve . -s"
+  },
+  "keywords": [
+    "portfolio",
+    "ai",
+    "ux",
+    "research",
+    "web",
+    "responsive",
+    "modern"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-ux-portfolio.git"
+  },
+  "homepage": "https://yourusername.github.io/ai-ux-portfolio"
+}
+

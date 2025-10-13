@@ -1,0 +1,26 @@
+HOW TO ADD YOUR PHOTO TO THE PORTFOLIO
+=========================================
+
+STEP 1: Save Your Photo
+- Right-click on your photo
+- Select "Save Image As..." or "Download"
+- Save it in this folder: /Users/dorsacharkhian/ai-ux-portfolio/
+- Name it exactly: dorsa-profile.jpg
+
+STEP 2: Alternative Method
+- Drag and drop your photo into this folder
+- Rename it to: dorsa-profile.jpg
+
+STEP 3: Check if it worked
+- Open index.html in your browser
+- Your photo should appear on the home page
+
+CURRENT FOLDER LOCATION:
+/Users/dorsacharkhian/ai-ux-portfolio/
+
+REQUIRED FILENAME:
+dorsa-profile.jpg
+
+The HTML and CSS are already set up correctly!
+You just need to add the actual image file.
+

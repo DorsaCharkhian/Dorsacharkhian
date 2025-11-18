@@ -580,6 +580,18 @@ section {
     top: 1rem;
 }
 
+.volunteering-link {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.volunteering-link:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
 .resume-download {
     text-align: center;
     padding: 2rem;
@@ -602,6 +614,19 @@ section {
 /* Projects Section */
 .projects {
     background: #f8fafc;
+}
+
+.projects-link-container {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.projects-drive-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
 }
 
 .projects-grid {
@@ -766,6 +791,436 @@ section {
     background: #333;
     color: white;
     transform: translateY(-2px);
+}
+
+.peer-review-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 15px;
+}
+
+.peer-review-section h3 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.peer-review-section p {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.peer-review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.peer-review-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.peer-review-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.peer-review-item i {
+    color: #667eea;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.peer-review-item span {
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Teaching Section */
+.teaching {
+    background: white;
+}
+
+.teaching-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.teaching-intro {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 15px;
+}
+
+.teaching-intro p {
+    color: #4a5568;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.academic-positions {
+    margin-bottom: 3rem;
+}
+
+.academic-positions h3,
+.courses-section h3,
+.teaching-experience h3,
+.teaching-philosophy h3,
+.teaching-awards h3 {
+    color: #2d3748;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.position-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.position-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+    border-color: #667eea;
+}
+
+.position-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.position-header h4 {
+    color: #2d3748;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.position-institution {
+    display: block;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.position-period {
+    display: block;
+    color: #4a5568;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.position-description p {
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.position-responsibilities {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.position-responsibilities h5 {
+    color: #2d3748;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.position-responsibilities ul {
+    list-style: none;
+    padding: 0;
+}
+
+.position-responsibilities li {
+    color: #4a5568;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.position-responsibilities li::before {
+    content: '▸';
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.position-links {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e2e8f0;
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.position-links .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.courses-section {
+    margin-bottom: 3rem;
+}
+
+.course-card {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.course-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.course-header h4 {
+    color: #2d3748;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.course-institution {
+    display: block;
+    color: #667eea;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.course-period {
+    display: block;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.course-description p {
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.course-topics,
+.course-outcomes {
+    margin-top: 1.5rem;
+}
+
+.course-topics h5,
+.course-outcomes h5 {
+    color: #2d3748;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.course-topics ul,
+.course-outcomes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course-topics li,
+.course-outcomes li {
+    color: #4a5568;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.course-topics li::before,
+.course-outcomes li::before {
+    content: '✓';
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.teaching-timeline {
+    margin-bottom: 3rem;
+}
+
+.teaching-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.teaching-item:hover {
+    transform: translateX(10px);
+}
+
+.teaching-date {
+    flex-shrink: 0;
+    width: 150px;
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-top: 0.5rem;
+}
+
+.teaching-details {
+    flex: 1;
+}
+
+.teaching-details h4 {
+    color: #2d3748;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.teaching-details h5 {
+    color: #667eea;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.teaching-details p {
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.teaching-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.teaching-details li {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.teaching-details li::before {
+    content: '•';
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.philosophy-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.philosophy-item {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.philosophy-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy-item i {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.philosophy-item h4 {
+    color: #2d3748;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.philosophy-item p {
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.teaching-awards {
+    margin-top: 3rem;
+}
+
+.award-item {
+    display: flex;
+    gap: 1.5rem;
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 15px;
+    align-items: flex-start;
+}
+
+.award-item i {
+    font-size: 2rem;
+    color: #fbbf24;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+}
+
+.award-item h4 {
+    color: #2d3748;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.award-item p {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.award-description {
+    color: #4a5568;
+    font-style: italic;
+    margin-top: 0.5rem;
 }
 
 /* Contact Section */
@@ -1036,6 +1491,28 @@ section {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .teaching-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .teaching-date {
+        width: auto;
+        padding-top: 0;
+    }
+
+    .philosophy-content {
+        grid-template-columns: 1fr;
+    }
+
+    .course-card {
+        padding: 1.5rem;
+    }
+
+    .position-card {
+        padding: 1.5rem;
     }
 }
 

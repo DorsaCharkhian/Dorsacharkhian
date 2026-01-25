@@ -292,7 +292,7 @@ h3 {
 
 /* Section Styles */
 section {
-    padding: 4rem 0;
+    padding: 2rem 0;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -303,46 +303,46 @@ section.visible {
     transform: translateY(0);
 }
 
-/* Consistent spacing between major sections */
+/* Consistent spacing between major sections - 50% reduction */
 .about {
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
 }
 
 .resume {
-    padding-top: 1rem;
-    padding-bottom: 4rem;
-}
-
-.projects {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-
-.research {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-
-.teaching {
-    padding-top: 4rem;
+    padding-top: 0.5rem;
     padding-bottom: 2rem;
 }
 
+.projects {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.research {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.teaching {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
 .contact {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 600;
     color: #2d3748;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .heading-accent {
@@ -357,7 +357,7 @@ section.visible {
     font-size: 1.2rem;
     color: #4a5568;
     max-width: 600px;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 1rem;
 }
 
 .resume-download-header {
@@ -390,13 +390,13 @@ section.visible {
 }
 
 .about-text h3 {
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: #2d3748;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .about-text p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #4a5568;
     margin-bottom: 1.5rem;
     line-height: 1.7;
@@ -434,7 +434,7 @@ section.visible {
 
 .core-competencies {
     margin-top: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     padding: 0.75rem 1rem;
     background: rgba(248, 250, 252, 0.7);
     backdrop-filter: blur(10px);
@@ -446,16 +446,16 @@ section.visible {
 
 .core-competencies h3 {
     color: #2d3748 !important;
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
     font-weight: 600 !important;
-    margin-bottom: 0.4rem !important;
+    margin-bottom: 0.5rem !important;
 }
 
 .competencies-intro {
     color: #4a5568 !important;
-    line-height: 1.5 !important;
+    line-height: 1.6 !important;
     margin-bottom: 0.75rem !important;
-    font-size: 0.8rem !important;
+    font-size: 1rem !important;
 }
 
 .competencies-tags {
@@ -708,8 +708,8 @@ section.visible {
 
 .resume-honors h3 {
     color: #2d3748;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -1093,8 +1093,8 @@ section.visible {
 .teaching-philosophy h3,
 .teaching-awards h3 {
     color: #2d3748;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -1158,9 +1158,9 @@ section.visible {
 
 .position-responsibilities h5 {
     color: #2d3748;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .position-responsibilities ul {
@@ -1173,8 +1173,8 @@ section.visible {
     margin-bottom: 0.6rem;
     padding-left: 1.25rem;
     position: relative;
-    line-height: 1.5;
-    font-size: 0.85rem;
+    line-height: 1.6;
+    font-size: 1rem;
 }
 
 .position-responsibilities li::before {

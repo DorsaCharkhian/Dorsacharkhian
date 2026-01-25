@@ -1101,11 +1101,12 @@ section.visible {
 .position-card {
     background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
     border-radius: 12px;
-    padding: 1.25rem;
+    padding: 1.5rem;
     border: 2px solid #e2e8f0;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .position-card:hover {
@@ -1114,25 +1115,44 @@ section.visible {
     border-color: #667eea;
 }
 
-.position-header {
+.position-card-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
     margin-bottom: 1rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid #e2e8f0;
 }
 
-.position-header h4 {
-    color: #2d3748;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.position-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .position-institution {
-    display: block;
     color: #667eea;
     font-weight: 600;
+    font-size: 0.95rem;
     margin-bottom: 0.5rem;
-    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.position-info h4 {
+    color: #2d3748;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.position-date {
+    color: #4a5568;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.position-details {
+    display: flex;
+    flex-direction: column;
 }
 
 .position-period {
@@ -1150,17 +1170,17 @@ section.visible {
 }
 
 .position-responsibilities {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e2e8f0;
     flex: 1;
 }
 
 .position-responsibilities h5 {
     color: #2d3748;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
 }
 
 .position-responsibilities ul {
@@ -1170,37 +1190,40 @@ section.visible {
 
 .position-responsibilities li {
     color: #4a5568;
-    margin-bottom: 0.6rem;
-    padding-left: 1.25rem;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
     position: relative;
     line-height: 1.6;
     font-size: 1rem;
 }
 
 .position-responsibilities li::before {
-    content: '▸';
+    content: '✓';
     color: #667eea;
     font-weight: bold;
     position: absolute;
     left: 0;
+    font-size: 0.9rem;
 }
 
 .position-links {
-    margin-top: 1rem;
+    margin-top: auto;
     padding-top: 1rem;
     border-top: 1px solid #e2e8f0;
     display: flex;
-    gap: 0.75rem;
-    justify-content: flex-start;
+    gap: 0.5rem;
+    justify-content: flex-end;
     flex-wrap: wrap;
 }
 
 .position-links .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    gap: 0.35rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    font-weight: 500;
 }
 
 .courses-section {
@@ -1772,6 +1795,15 @@ section.visible {
     
     .positions-grid {
         gap: 1rem;
+    }
+    
+    .position-card-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .position-links {
+        justify-content: flex-start;
     }
 }
 

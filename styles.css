@@ -14,22 +14,42 @@ body {
 }
 
 /* Unified Typography */
+/* Typography Scale */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
-    font-weight: 600;
     line-height: 1.2;
+    margin: 0;
 }
 
 h1 {
+    font-size: 3rem;
     font-weight: 700;
 }
 
 h2 {
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
 h3 {
+    font-size: 1.2rem;
     font-weight: 600;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+body, p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 .container {
@@ -59,6 +79,11 @@ h3 {
     height: 70px;
 }
 
+.nav-logo .logo-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
 .nav-logo .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
@@ -66,6 +91,23 @@ h3 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    transition: opacity 0.3s ease;
+}
+
+.nav-logo .logo-link:hover .logo-text {
+    opacity: 0.8;
+}
+
+.nav-icon .nav-link {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon .nav-link::after {
+    display: none;
 }
 
 .nav-menu {
@@ -117,13 +159,14 @@ h3 {
 
 /* Hero Section */
 .hero {
-    min-height: 90vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     position: relative;
     overflow: hidden;
-    padding: 3rem 0;
+    padding: 2rem 0;
+    margin-top: 70px;
 }
 
 .hero::before {
@@ -155,10 +198,12 @@ h3 {
     animation: fadeInUp 1s ease-out;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex: 1;
-    min-height: 360px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-text-wrapper {
@@ -183,13 +228,12 @@ h3 {
 }
 
 .hero-description {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: #4a5568;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     line-height: 1.7;
     font-weight: 400;
     letter-spacing: 0.01em;
-    display: inline-block;
 }
 
 .hero-buttons {
@@ -296,6 +340,10 @@ section {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section:not(.hero) {
+    margin-top: 70px;
 }
 
 section.visible {
@@ -1663,14 +1711,15 @@ section.visible {
     }
 
     .hero {
-        padding: 2rem 0;
-        min-height: auto;
+        padding: 3rem 0;
+        min-height: 70vh;
+        margin-top: 70px;
     }
 
     .hero-container {
         flex-direction: column;
         text-align: center;
-        gap: 1.5rem;
+        gap: 2rem;
         align-items: center;
         justify-content: center;
     }
@@ -1678,35 +1727,38 @@ section.visible {
     .hero-content {
         align-items: center;
         text-align: center;
-        min-height: auto;
+        width: 100%;
+        padding: 0 1rem;
     }
 
     .hero-text-wrapper {
         text-align: center;
+        width: 100%;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
     .hero-description {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 
-    .hero-content {
-        min-height: auto;
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
     }
 
     .hero-visual {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .hero-photo {
-        width: 280px;
-        height: 280px;
+        display: none;
     }
 
     .expertise-tags {
@@ -1813,7 +1865,40 @@ section.visible {
     }
 
     .section-title {
+        font-size: 1.75rem;
+    }
+
+    h1 {
         font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    body, p {
+        font-size: 0.95rem;
+    }
+
+    section:not(.hero) {
+        margin-top: 70px;
+        padding: 1.5rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-icon {
+        margin-left: 0.5rem;
     }
 
     .hero-buttons {

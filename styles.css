@@ -481,8 +481,22 @@ section.visible {
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 1;
 }
 
 .about-text h3 {
@@ -1789,12 +1803,6 @@ section.visible {
         margin-bottom: 0.5rem;
     }
 
-    .hero-projects-link {
-        font-size: 0.85rem;
-        margin-bottom: 1.25rem;
-        display: block;
-        padding: 0.5rem 0;
-    }
 
     .hero-tagline {
         font-size: 1.25rem;
@@ -1831,6 +1839,16 @@ section.visible {
         padding: 0.4rem 0.8rem;
     }
 
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image {
+        order: -1;
+        margin-bottom: 1rem;
+    }
 
     .profile-photo {
         width: 250px;
@@ -1928,9 +1946,6 @@ section.visible {
         font-size: 1.1rem;
     }
 
-    .hero-projects-link {
-        font-size: 0.85rem;
-    }
 
     .section-title {
         font-size: 1.75rem;

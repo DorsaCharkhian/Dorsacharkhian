@@ -133,13 +133,18 @@ body {
     animation: fadeInUp 1s ease-out;
 }
 
+.hero-text-wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
 .hero-title {
     font-size: 4.5rem;
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 2rem;
     color: #2d3748;
-    max-width: 600px;
+    width: 100%;
 }
 
 .gradient-text {
@@ -154,7 +159,7 @@ body {
     color: #4a5568;
     margin-bottom: 2rem;
     line-height: 1.8;
-    max-width: 600px;
+    width: 100%;
     font-weight: 400;
     letter-spacing: 0.01em;
 }

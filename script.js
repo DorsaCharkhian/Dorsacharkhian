@@ -39,13 +39,21 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Intersection Observer for animations
+// Enhanced Intersection Observer for scroll reveal animations
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+const elementObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -54,15 +62,26 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for animation
+// Observe all sections and elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.project-card, .research-item, .about-content, .contact-content');
+    // Observe all sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+    
+    // Observe individual elements
+    const animatedElements = document.querySelectorAll(
+        '.project-card, .research-item, .about-content, .contact-content, ' +
+        '.core-competencies, .resume-content, .resume-honors, ' +
+        '.research-description, .peer-review-section, .position-card'
+    );
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+        elementObserver.observe(el);
     });
 });
 

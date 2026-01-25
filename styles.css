@@ -348,54 +348,51 @@ section {
 }
 
 .core-competencies {
-    margin-top: 3rem;
-    padding: 2rem;
+    margin-top: 2rem;
+    padding: 1rem 1.25rem;
     background: #f8fafc;
-    border-radius: 15px;
+    border-radius: 12px;
 }
 
 .core-competencies h3 {
-    color: #2d3748;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    color: #2d3748 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
 }
 
 .competencies-intro {
-    color: #4a5568;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+    color: #4a5568 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1rem !important;
+    font-size: 0.85rem !important;
 }
 
-.competencies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.competency-item {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: 600;
-    color: #2d3748;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    border: 2px solid #e2e8f0;
-    min-height: 80px;
+.competencies-tags {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
 }
 
-.competency-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
-    border-color: #667eea;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+.competency-tag {
+    background: #f3f0ff !important;
+    color: #667eea !important;
+    padding: 0.35rem 0.85rem !important;
+    border-radius: 20px !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    border: 1.5px solid #c4b5fd !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+}
+
+.competency-tag:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-color: transparent !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4) !important;
 }
 
 .about-image {

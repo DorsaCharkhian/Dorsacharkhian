@@ -159,9 +159,9 @@ body {
     color: #4a5568;
     margin-bottom: 2rem;
     line-height: 1.8;
-    width: 100%;
     font-weight: 400;
     letter-spacing: 0.01em;
+    display: inline-block;
 }
 
 .hero-buttons {

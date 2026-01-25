@@ -259,5 +259,24 @@ document.querySelectorAll('a, button, input, textarea').forEach(element => {
     });
 });
 
+// Align hero description width with title width
+document.addEventListener('DOMContentLoaded', () => {
+    const heroTitle = document.querySelector('.hero-title');
+    const heroDescription = document.querySelector('.hero-description');
+    
+    if (heroTitle && heroDescription) {
+        const updateDescriptionWidth = () => {
+            const titleWidth = heroTitle.offsetWidth;
+            heroDescription.style.width = titleWidth + 'px';
+        };
+        
+        // Update on load
+        updateDescriptionWidth();
+        
+        // Update on resize
+        window.addEventListener('resize', updateDescriptionWidth);
+    }
+});
+
 console.log('AI & UX Portfolio loaded successfully! 🚀');
 

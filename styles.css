@@ -215,13 +215,27 @@ body, p {
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     color: #2d3748;
     width: 100%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.hero-projects-link {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #667eea;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 0.25rem;
+    letter-spacing: 0.02em;
+    opacity: 0.85;
 }
 
 .hero-tagline {
@@ -244,22 +258,10 @@ body, p {
 .hero-description {
     font-size: 1.1rem;
     color: #4a5568;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     line-height: 1.7;
     font-weight: 400;
     letter-spacing: 0.01em;
-}
-
-.hero-projects-link {
-    display: inline-block;
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: #667eea;
-    text-decoration: none;
-    margin-bottom: 2.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    padding-bottom: 0.25rem;
 }
 
 .hero-projects-link::after {
@@ -275,6 +277,7 @@ body, p {
 
 .hero-projects-link:hover {
     color: #764ba2;
+    opacity: 1;
 }
 
 .hero-projects-link:hover::after {
@@ -1783,7 +1786,14 @@ section.visible {
 
     .hero-name {
         font-size: 2.5rem;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-projects-link {
+        font-size: 0.85rem;
+        margin-bottom: 1.25rem;
+        display: block;
+        padding: 0.5rem 0;
     }
 
     .hero-tagline {
@@ -1793,11 +1803,6 @@ section.visible {
 
     .hero-description {
         font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .hero-projects-link {
-        font-size: 0.9rem;
         margin-bottom: 2rem;
     }
 

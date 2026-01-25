@@ -284,14 +284,26 @@ section {
     font-size: 2.5rem;
     font-weight: 700;
     color: #2d3748;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
     font-size: 1.2rem;
     color: #4a5568;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
+}
+
+.resume-download-header {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.resume-download-header .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* About Section */
@@ -349,6 +361,7 @@ section {
 
 .core-competencies {
     margin-top: 2rem;
+    margin-bottom: 1rem;
     padding: 1rem 1.25rem;
     background: #f8fafc;
     border-radius: 12px;
@@ -448,6 +461,7 @@ section {
 /* Resume Section */
 .resume {
     background: white;
+    padding-top: 3rem;
 }
 
 .resume-content {

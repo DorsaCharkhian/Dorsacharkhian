@@ -694,37 +694,68 @@ section.visible {
 }
 
 .resume-honors {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .resume-honors h3 {
     color: #2d3748;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
-.resume-honors ul {
-    list-style: none;
-    padding: 0;
+.honors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 
-.resume-honors li {
+.honor-card {
     background: #f8fafc;
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    color: #4a5568;
-    line-height: 1.6;
-    position: relative;
-    padding-left: 2rem;
+    border: 1px solid rgba(102, 126, 234, 0.15);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.3s ease;
 }
 
-.resume-honors li::before {
-    content: '🏆';
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
+.honor-card:hover {
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.honor-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.honor-content {
+    flex: 1;
+}
+
+.honor-content h4 {
+    color: #2d3748;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.honor-content p {
+    color: #4a5568;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
 }
 
 .volunteering-link {
@@ -737,6 +768,13 @@ section.visible {
 .volunteering-link:hover {
     color: #764ba2;
     text-decoration: underline;
+}
+
+/* Responsive design for honors grid */
+@media (max-width: 768px) {
+    .honors-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .resume-download {

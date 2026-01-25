@@ -1915,8 +1915,16 @@ section.visible {
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2.5rem;
+    .hero-name {
+        font-size: 2rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.1rem;
+    }
+
+    .hero-projects-link {
+        font-size: 0.85rem;
     }
 
     .section-title {

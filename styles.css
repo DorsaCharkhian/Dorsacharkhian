@@ -2553,3 +2553,26 @@ section.visible {
         max-width: 280px;
     }
 }
+
+/* Case Study Figure Styles */
+.case-study-figure {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.case-study-figure img {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto 0.75rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.case-study-figure figcaption {
+    font-size: 0.9rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+}

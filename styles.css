@@ -2142,6 +2142,7 @@ section.visible {
 .case-study-video {
     width: 100%;
     max-width: 100%;
+    height: auto;
     display: block;
     border-radius: 10px;
     background: #000;
@@ -2367,10 +2368,14 @@ section.visible {
     .case-study-video {
         border-radius: 8px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        max-width: 100%;
+        height: auto;
     }
 
     .video-container {
         margin-top: 1rem;
+        width: 100%;
+        overflow: hidden;
     }
 
     .case-studies-intro {

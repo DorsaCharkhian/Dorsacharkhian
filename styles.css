@@ -286,21 +286,19 @@ body, p {
 
 .hero-buttons {
     display: flex;
-    gap: 0.8rem;
+    flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 0.5rem;
-    margin-bottom: 2.5rem;
-}
-
-.hero-resume-download {
-    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-top: 1.5rem;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    width: 100%;
 }
 
-.hero-resume-download .btn {
+.hero-buttons .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
 }
 
@@ -1828,25 +1826,12 @@ section.visible {
     }
 
     .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.75rem;
-        margin-bottom: 2rem;
+        gap: 1rem;
     }
 
     .hero-buttons .btn {
         width: 100%;
         max-width: 280px;
-    }
-
-    .hero-resume-download {
-        margin-top: 1.25rem;
-    }
-
-    .hero-resume-download .btn {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
     }
 
     .hero-visual {
@@ -2011,10 +1996,11 @@ section.visible {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
-    .btn {
-        width: 200px;
-        text-align: center;
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
     }
 }

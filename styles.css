@@ -1996,6 +1996,175 @@ section.visible {
     }
 }
 
+/* Case Study Page Styles */
+.case-study-hero {
+    padding: 4rem 0 3rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin-top: 70px;
+}
+
+.case-study-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.case-study-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.case-study-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #4a5568;
+    margin-bottom: 0.75rem;
+}
+
+.case-study-meta {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #667eea;
+}
+
+.case-study-content {
+    padding: 4rem 0;
+    background: white;
+}
+
+.case-study-body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.case-study-section {
+    margin-bottom: 3.5rem;
+}
+
+.case-study-section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.case-study-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 0;
+}
+
+.case-study-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.case-study-list li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+.case-study-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.case-study-impact {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 3rem 0;
+}
+
+.impact-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.impact-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.impact-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.impact-label {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.4;
+}
+
+.case-study-takeaway {
+    background: linear-gradient(135deg, #f3f0ff 0%, #e0d5ff 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.case-study-takeaway-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #2d3748;
+    font-style: italic;
+    margin: 0;
+}
+
+.video-container {
+    margin-top: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.video-placeholder {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.video-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.video-placeholder p {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
@@ -2131,6 +2300,52 @@ section.visible {
     .case-studies-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
+    }
+
+    .case-study-hero {
+        padding: 3rem 0 2rem;
+        margin-top: 70px;
+    }
+
+    .case-study-title {
+        font-size: 2rem;
+    }
+
+    .case-study-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .case-study-content {
+        padding: 3rem 0;
+    }
+
+    .case-study-section {
+        margin-bottom: 2.5rem;
+    }
+
+    .case-study-section-title {
+        font-size: 1.5rem;
+    }
+
+    .case-study-text {
+        font-size: 1rem;
+    }
+
+    .case-study-list li {
+        font-size: 1rem;
+    }
+
+    .impact-metrics {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .impact-number {
+        font-size: 2rem;
+    }
+
+    .case-study-takeaway-text {
+        font-size: 1.1rem;
     }
 
     .case-studies-intro {

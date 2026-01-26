@@ -1028,6 +1028,12 @@ section.visible {
     border: 1px solid #e0d5ff;
 }
 
+.case-tag-outlined {
+    background: transparent;
+    border: 1px solid #667eea;
+    color: #667eea;
+}
+
 .case-study-cta {
     display: inline-flex;
     align-items: center;

@@ -935,9 +935,118 @@ section.visible {
     background: #f8fafc;
 }
 
+.case-studies-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.case-studies-intro p {
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.case-study-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.case-study-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: #c4b5fd;
+}
+
+.case-study-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.case-study-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.case-study-role {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #667eea;
+    background: #f3f0ff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+}
+
+.case-study-description {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    flex: 1;
+}
+
+.case-study-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.case-tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #667eea;
+    background: #f3f0ff;
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
+    border: 1px solid #e0d5ff;
+}
+
+.case-study-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #667eea;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.case-study-cta:hover {
+    color: #764ba2;
+    gap: 0.75rem;
+}
+
+.case-study-cta i {
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+}
+
+.case-study-cta:hover i {
+    transform: translateX(4px);
+}
+
 .projects-link-container {
     text-align: center;
-    padding: 3rem 0;
+    padding: 2rem 0 0;
 }
 
 .projects-drive-link {
@@ -1872,6 +1981,15 @@ section.visible {
 
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .case-studies-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .case-studies-intro {
+        margin-bottom: 2rem;
     }
 
     .platform-buttons {

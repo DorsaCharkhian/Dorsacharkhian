@@ -2040,6 +2040,32 @@ section.visible {
     margin: 0 auto;
 }
 
+.case-study-image {
+    margin: 3rem 0;
+    max-width: 100%;
+}
+
+.case-study-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display: block;
+    margin: 0 auto;
+}
+
+.case-study-image figcaption {
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-align: center;
+    margin-top: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
 .case-study-section {
     margin-bottom: 3.5rem;
 }
@@ -2363,6 +2389,21 @@ section.visible {
 
     .case-study-takeaway-text {
         font-size: 1.1rem;
+    }
+
+    .case-study-image {
+        margin: 2rem 0;
+    }
+
+    .case-study-image img {
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .case-study-image figcaption {
+        font-size: 0.8rem;
+        margin-top: 0.75rem;
+        padding: 0 1rem;
     }
 
     .case-study-video {

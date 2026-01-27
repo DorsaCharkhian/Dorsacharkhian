@@ -66,7 +66,7 @@ const elementObserver = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections and elements for animation
+// Observe all sections and elements for animation - DISABLED for instant display
 document.addEventListener('DOMContentLoaded', () => {
     // Observe all sections
     const sections = document.querySelectorAll('section');
@@ -74,18 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
     
-    // Observe individual elements
+    // Observe individual elements - NO DELAY, instant display
     const animatedElements = document.querySelectorAll(
         '.project-card, .research-item, .about-content, .contact-content, ' +
         '.core-competencies, .resume-content, .resume-honors, ' +
         '.research-description, .peer-review-section, .position-card'
     );
     
+    // Remove animation delays - show content immediately
     animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        elementObserver.observe(el);
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        el.style.transition = 'none';
     });
 });
 
@@ -230,14 +230,11 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Add loading animation
+// Add loading animation - DISABLED for instant display
 window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease';
-    
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
+    // No delay - content shows immediately
+    document.body.style.opacity = '1';
+    document.body.style.transition = 'none';
 });
 
 // Add scroll progress indicator

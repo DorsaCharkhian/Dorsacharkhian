@@ -199,7 +199,7 @@ body, p {
 }
 
 .hero-content {
-    animation: fadeInUp 1s ease-out;
+    /* animation: fadeInUp 1s ease-out; - DISABLED for instant display */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -356,7 +356,7 @@ body, p {
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     border: 4px solid white;
-    animation: fadeInUp 1s ease-out 0.8s both;
+    /* animation: fadeInUp 1s ease-out 0.8s both; - DISABLED for instant display */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -412,6 +412,20 @@ section:not(.hero) {
 section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Remove initial hidden state - show all content immediately */
+section {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.project-card, .research-item, .about-content, .contact-content,
+.core-competencies, .resume-content, .resume-honors,
+.research-description, .peer-review-section, .position-card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
 }
 
 /* Consistent spacing between major sections - 50% reduction */

@@ -2546,6 +2546,23 @@ section {
         padding: 0 1rem;
     }
 
+    .case-study-figure {
+        margin: 1.5rem 0;
+    }
+
+    .case-study-figure-medium {
+        margin: 1.25rem 0;
+    }
+
+    .case-study-figure-medium img {
+        max-width: 85%;
+    }
+
+    .case-study-figure figcaption {
+        font-size: 0.85rem;
+        padding: 0 1rem;
+    }
+
     .case-study-video {
         border-radius: 8px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
@@ -2708,18 +2725,26 @@ section {
 
 /* Case Study Figure Styles */
 .case-study-figure {
-    margin: 3rem 0;
+    margin: 2rem 0;
     text-align: center;
 }
 
 .case-study-figure img {
     display: block;
     width: 100%;
-    max-width: 800px;
+    max-width: 720px;
     height: auto;
     margin: 0 auto 0.75rem;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.case-study-figure-medium {
+    margin: 1.5rem 0;
+}
+
+.case-study-figure-medium img {
+    max-width: 58%;
 }
 
 .case-study-figure figcaption {

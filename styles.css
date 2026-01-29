@@ -2502,8 +2502,13 @@ section {
         padding: 1.5rem 0 3rem;
     }
 
+    .case-study-body {
+        padding: 0 1rem;
+    }
+
     .case-study-section {
         margin-bottom: 2.5rem;
+        padding: 0;
     }
 
     .case-study-section-title {

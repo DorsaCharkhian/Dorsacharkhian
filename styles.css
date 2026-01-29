@@ -2558,9 +2558,46 @@ section {
         max-width: 85%;
     }
 
+    .case-study-figure-qr {
+        margin: 1.25rem 0;
+    }
+
+    .case-study-figure-qr img {
+        max-width: 100%;
+    }
+
     .case-study-figure figcaption {
         font-size: 0.85rem;
         padding: 0 1rem;
+    }
+
+    /* Mobile: Stack two-column layouts */
+    .case-study-section-two-col {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .case-study-figure-inline {
+        margin: 1rem 0;
+    }
+
+    .case-study-figure-inline img {
+        max-width: 100%;
+    }
+
+    .case-study-figure-credibility img {
+        max-width: 100%;
+    }
+
+    /* Mobile: Stack image grid */
+    .case-study-image-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .case-study-image-grid .case-study-figure img {
+        height: auto;
+        max-height: 250px;
     }
 
     .case-study-video {
@@ -2747,9 +2784,76 @@ section {
     max-width: 58%;
 }
 
+.case-study-figure-qr {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.case-study-figure-qr img {
+    max-width: 280px;
+}
+
 .case-study-figure figcaption {
     font-size: 0.9rem;
     color: #6b7280;
     max-width: 600px;
     margin: 0 auto;
+}
+
+/* Two-column layout for sections with inline images */
+.case-study-section-two-col {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.case-study-section-content {
+    min-width: 0;
+}
+
+.case-study-figure-inline {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.case-study-figure-inline img {
+    max-width: 420px;
+    margin-bottom: 0.5rem;
+}
+
+.case-study-figure-inline figcaption {
+    font-size: 0.85rem;
+    max-width: 420px;
+}
+
+.case-study-figure-credibility img {
+    max-width: 320px;
+}
+
+/* Research in the Wild image grid */
+.case-study-image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.case-study-image-grid .case-study-figure {
+    margin: 0;
+}
+
+.case-study-image-grid .case-study-figure img {
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.case-study-image-grid .case-study-figure figcaption {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    max-width: 100%;
 }

@@ -2573,31 +2573,52 @@ section {
 
     /* Mobile: Stack two-column layouts */
     .case-study-section-two-col {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .case-study-section-content {
+        width: 100%;
     }
 
     .case-study-figure-inline {
-        margin: 1rem 0;
+        margin: 1rem 0 !important;
+        width: 100%;
+        order: 2;
     }
 
     .case-study-figure-inline img {
-        max-width: 100%;
+        max-width: 100% !important;
+        width: 100%;
+    }
+
+    .case-study-figure-inline figcaption {
+        max-width: 100% !important;
     }
 
     .case-study-figure-credibility img {
-        max-width: 100%;
+        max-width: 100% !important;
+        width: 100%;
     }
 
     /* Mobile: Stack image grid */
     .case-study-image-grid {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+        display: grid !important;
+    }
+
+    .case-study-image-grid .case-study-figure {
+        width: 100%;
     }
 
     .case-study-image-grid .case-study-figure img {
-        height: auto;
-        max-height: 250px;
+        height: auto !important;
+        max-height: none !important;
+        width: 100%;
+        object-fit: contain;
     }
 
     .case-study-video {

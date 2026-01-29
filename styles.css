@@ -2573,52 +2573,75 @@ section {
 
     /* Mobile: Stack two-column layouts */
     .case-study-section-two-col {
+        display: block !important;
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
-        display: flex !important;
-        flex-direction: column !important;
     }
 
-    .case-study-section-content {
-        width: 100%;
+    .case-study-section-two-col .case-study-section-content {
+        width: 100% !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .case-study-section-two-col .case-study-figure-inline {
+        margin: 0 auto 1.5rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
     }
 
     .case-study-figure-inline {
-        margin: 1rem 0 !important;
-        width: 100%;
-        order: 2;
+        margin: 1rem auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .case-study-figure-inline img {
         max-width: 100% !important;
-        width: 100%;
+        width: 100% !important;
+        margin: 0 auto !important;
     }
 
     .case-study-figure-inline figcaption {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 1rem;
+    }
+
+    .case-study-figure-credibility {
+        width: 100% !important;
         max-width: 100% !important;
     }
 
     .case-study-figure-credibility img {
         max-width: 100% !important;
-        width: 100%;
+        width: 100% !important;
     }
 
     /* Mobile: Stack image grid */
     .case-study-image-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.25rem !important;
         display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin-top: 1.5rem !important;
     }
 
     .case-study-image-grid .case-study-figure {
-        width: 100%;
+        width: 100% !important;
+        margin: 0 !important;
     }
 
     .case-study-image-grid .case-study-figure img {
         height: auto !important;
         max-height: none !important;
-        width: 100%;
-        object-fit: contain;
+        width: 100% !important;
+        max-width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .case-study-image-grid .case-study-figure figcaption {
+        width: 100% !important;
+        padding: 0 1rem;
     }
 
     .case-study-video {

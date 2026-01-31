@@ -2910,6 +2910,33 @@ section {
     margin: 0 auto;
 }
 
+/* Tools section with icons — case study page */
+.case-study-tools-text {
+    font-size: 0.95rem;
+    color: #4a5568;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.5rem;
+}
+
+.case-study-tool {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.case-study-tool i {
+    font-size: 1rem;
+    color: #667eea;
+}
+
+.case-study-tool-sep {
+    color: #cbd5e0;
+    font-weight: 300;
+    user-select: none;
+}
+
 .case-study-figcaption-structured {
     margin-top: 0.75rem;
     line-height: 1.55;

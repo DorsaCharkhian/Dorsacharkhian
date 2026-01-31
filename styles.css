@@ -3042,3 +3042,60 @@ section {
     margin-top: 0.5rem;
     max-width: 100%;
 }
+
+/* ========== Additive utilities: lightbox + video-responsive (do not alter existing layout) ========== */
+
+/* Lightbox — click-to-zoom overlay; default state unchanged for images */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.lightbox-open {
+    display: flex;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    cursor: pointer;
+}
+
+.lightbox-img {
+    position: relative;
+    z-index: 10001;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Video: scale and fullscreen on mobile only; desktop unchanged */
+@media (max-width: 768px) {
+    .video-responsive,
+    .video-container,
+    .video-container-aspect {
+        max-width: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .video-container-aspect iframe,
+    .case-study-video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .lightbox-img {
+        max-width: 95vw;
+        max-height: 85vh;
+    }
+}

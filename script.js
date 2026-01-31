@@ -298,5 +298,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Lightbox: click-to-zoom for case study images (additive only — no HTML/layout changes)
+(function () {
+    function initLightbox() {
+        const body = document.querySelector('.case-study-body');
+        if (!body) return;
+
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox';
+        overlay.setAttribute('aria-hidden', 'true');
+        overlay.innerHTML = '<div class="lightbox-backdrop"><img class="lightbox-img" src="" alt="" /></div>';
+        document.body.appendChild(overlay);
+
+        const img = overlay.querySelector('.lightbox-img');
+        const backdrop = overlay.querySelector('.lightbox-backdrop');
+
+        function open(src, alt) {
+            img.src = src;
+            img.alt = alt || '';
+            overlay.classList.add('lightbox-open');
+            overlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+            overlay.classList.remove('lightbox-open');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        body.addEventListener('click', function (e) {
+            const target = e.target.closest('.case-study-figure img, .case-study-body img');
+            if (!target || !target.src) return;
+            e.preventDefault();
+            open(target.currentSrc || target.src, target.alt);
+        });
+
+        backdrop.addEventListener('click', close);
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && overlay.classList.contains('lightbox-open')) close();
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLightbox);
+    } else {
+        initLightbox();
+    }
+})();
+
 console.log('AI & UX Portfolio loaded successfully! 🚀');
 

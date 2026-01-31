@@ -2255,6 +2255,25 @@ section {
     position: relative;
 }
 
+/* 16:9 aspect wrapper for embedded video (e.g. Canva iframe) — matches Drexel/VR rhythm */
+.video-container-aspect {
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #0f0f0f;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.video-container-aspect iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 .case-study-video {
     width: 100%;
     max-width: 100%;

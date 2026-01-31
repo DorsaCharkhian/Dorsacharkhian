@@ -2175,6 +2175,19 @@ section {
     margin-bottom: 0;
 }
 
+/* Shared accent line (Key insight / Research scope) — same on all case studies */
+.case-study-text-accent {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #667eea;
+    font-weight: 500;
+}
+
+/* Lead-in paragraph before a list — same spacing on all case studies */
+.case-study-lead-in {
+    margin-bottom: 0.75rem;
+}
+
 .case-study-list {
     list-style: none;
     padding: 0;

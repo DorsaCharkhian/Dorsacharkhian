@@ -2040,7 +2040,7 @@ section {
 
 /* Case Study Page Styles */
 .case-study-hero {
-    padding: 2.5rem 0 2rem;
+    padding: 2.5rem 0 1rem;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     margin-top: 70px;
 }
@@ -2120,7 +2120,7 @@ section {
 }
 
 .case-study-content {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem;
     background: white;
 }
 

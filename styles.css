@@ -2200,15 +2200,12 @@ section {
 }
 
 .case-study-impact {
-    background: #f8fafc;
-    padding: 2rem;
-    border-radius: 12px;
-    margin: 3rem 0;
+    margin: 0 0 3.5rem 0;
 }
 
 .impact-metrics {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 1rem;
 }
@@ -2221,11 +2218,11 @@ section {
 }
 
 .impact-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #667eea;
-    margin-bottom: 0.5rem;
-    line-height: 1;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
 }
 
 .impact-label {
@@ -2598,7 +2595,7 @@ section {
     }
 
     .impact-number {
-        font-size: 2rem;
+        font-size: 1.1rem;
     }
 
     .case-study-takeaway-text {

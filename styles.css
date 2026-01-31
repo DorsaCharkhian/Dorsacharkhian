@@ -2504,10 +2504,11 @@ section {
 
     .case-study-body {
         padding: 0 1rem;
+        max-width: 100%;
     }
 
     .case-study-section {
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem; /* 32px */
         padding: 0;
     }
 
@@ -2517,10 +2518,12 @@ section {
 
     .case-study-text {
         font-size: 1rem;
+        line-height: 1.6;
     }
 
     .case-study-list li {
         font-size: 1rem;
+        line-height: 1.6;
     }
 
     .impact-metrics {
@@ -2574,79 +2577,71 @@ section {
     .case-study-figure figcaption {
         font-size: 0.85rem;
         padding: 0 1rem;
+        text-align: center;
     }
 
-    /* Mobile: Stack two-column layouts */
+    /* Mobile: convert two-column sections to single-column
+       and stack images ABOVE text (per requirement). */
     .case-study-section-two-col {
-        display: block !important;
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-    }
-
-    .case-study-section-two-col .case-study-section-content {
-        width: 100% !important;
-        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem; /* 20px */
     }
 
     .case-study-section-two-col .case-study-figure-inline {
-        margin: 0 auto 1.5rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        display: block !important;
+        order: 1;
+        width: 100%;
+        margin: 0 0 1.25rem; /* 20px */
     }
 
-    .case-study-figure-inline {
-        margin: 1rem auto !important;
-        width: 100% !important;
-        max-width: 100% !important;
+    .case-study-section-two-col .case-study-figure-inline img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 
-    .case-study-figure-inline img {
-        max-width: 100% !important;
-        width: 100% !important;
-        margin: 0 auto !important;
+    .case-study-section-two-col .case-study-section-content {
+        order: 2;
+        width: 100%;
+        margin: 0;
     }
 
     .case-study-figure-inline figcaption {
-        max-width: 100% !important;
-        width: 100% !important;
+        max-width: 100%;
         padding: 0 1rem;
-    }
-
-    .case-study-figure-credibility {
-        width: 100% !important;
-        max-width: 100% !important;
+        text-align: center;
     }
 
     .case-study-figure-credibility img {
-        max-width: 100% !important;
-        width: 100% !important;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 
     /* Mobile: Stack image grid */
     .case-study-image-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-        margin-top: 1.5rem !important;
+        display: grid;
+        grid-template-columns: 1fr; /* one image per row */
+        gap: 1.5rem;
+        margin-top: 1.5rem;
     }
 
     .case-study-image-grid .case-study-figure {
-        width: 100% !important;
-        margin: 0 !important;
+        width: 100%;
+        margin: 0;
     }
 
     .case-study-image-grid .case-study-figure img {
-        height: auto !important;
-        max-height: none !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        object-fit: cover !important;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 
     .case-study-image-grid .case-study-figure figcaption {
-        width: 100% !important;
+        width: 100%;
         padding: 0 1rem;
+        text-align: center;
     }
 
     .case-study-video {

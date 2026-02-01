@@ -310,12 +310,12 @@ body, p {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -324,28 +324,34 @@ body, p {
     font-size: 1rem;
     flex-shrink: 0;
     line-height: 1;
+    color: inherit;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: #667eea;
+    color: #f8fafc;
+    border-color: transparent;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    background: #5a67d8;
+    color: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
 }
 
 .btn-secondary {
     background: transparent;
     color: #667eea;
-    border-color: #667eea;
+    border: 1px solid #a5b4fc;
 }
 
 .btn-secondary:hover {
-    background: #667eea;
-    color: white;
-    transform: translateY(-2px);
+    background: #f3f0ff;
+    color: #5a67d8;
+    border-color: #818cf8;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
 }
 
 .hero-visual {
@@ -515,8 +521,8 @@ section {
 }
 
 .resume-download-header .btn:hover {
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.4), 0 10px 25px rgba(102, 126, 234, 0.2);
-    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    transform: translateY(-1px);
 }
 
 /* About Section */
@@ -1098,17 +1104,18 @@ section {
 }
 
 .case-study-cta:hover {
-    color: #764ba2;
-    gap: 0.75rem;
+    color: #5a67d8;
+    gap: 0.6rem;
 }
 
 .case-study-cta i {
     font-size: 0.85rem;
-    transition: transform 0.3s ease;
+    color: inherit;
+    transition: transform 0.2s ease;
 }
 
 .case-study-cta:hover i {
-    transform: translateX(4px);
+    transform: translateX(3px);
 }
 
 .projects-link-container {
@@ -1642,6 +1649,7 @@ section {
 
 .position-links .btn i {
     font-size: 0.9rem;
+    color: inherit;
 }
 
 .courses-section {

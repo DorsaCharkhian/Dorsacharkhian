@@ -1618,6 +1618,11 @@ section {
     color: #4a5568;
     line-height: 1.7;
     font-size: 1.1rem;
+    max-width: 65ch;
+}
+
+.teaching-intro p + p {
+    margin-top: 0.75rem;
 }
 
 .academic-positions {
@@ -1688,8 +1693,8 @@ section {
 }
 
 .position-date {
-    color: #4a5568;
-    font-size: 0.85rem;
+    color: #6b7280;
+    font-size: 0.8rem;
     font-weight: 500;
 }
 
@@ -1736,7 +1741,7 @@ section {
     margin-bottom: 1rem;
     padding-left: 1.5rem;
     position: relative;
-    line-height: 1.7;
+    line-height: 1.6;
     font-size: 0.95rem;
     max-width: 42ch;
 }
@@ -1776,9 +1781,32 @@ section {
     color: inherit;
 }
 
+/* Teaching & Industry Relevance — concise, professional */
+.teaching-industry-section {
+    margin-top: 2.5rem;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.teaching-industry-heading {
+    color: #2d3748;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.teaching-industry-section p {
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 65ch;
+}
+
 /* Selected Student Work — sample case studies from Pratt IXD */
 .student-work-section {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
 }
 
 .student-work-heading {
@@ -1830,6 +1858,12 @@ section {
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.3;
+}
+
+.student-work-desc {
+    color: #4a5568;
+    font-size: 0.85rem;
+    line-height: 1.5;
 }
 
 .student-work-meta {

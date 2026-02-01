@@ -7,6 +7,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -3010,16 +3011,39 @@ section {
     .hero-text-wrapper {
         text-align: center;
         width: 100%;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
     }
 
     .hero-tagline {
         font-size: 1.25rem;
         margin-bottom: 1rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .hero-description {
         font-size: 1rem;
         margin-bottom: 2rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .section-header {
+        padding: 0 0.5rem;
+    }
+
+    .case-studies-intro {
+        padding: 0 0.5rem;
+    }
+
+    .footer .container {
+        padding: 0 1rem;
+    }
+
+    .projects .container {
+        padding: 0 1rem;
     }
 
     .hero-buttons {
@@ -3029,6 +3053,36 @@ section {
     .hero-buttons .btn {
         width: 100%;
         max-width: 280px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .skills-section {
+        padding: 1.5rem 0;
+    }
+
+    .skills-section .container {
+        padding: 0 1rem;
+    }
+
+    .skills-section-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .skills-list {
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    .skills-list li {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
     }
 
     .hero-visual {
@@ -3065,6 +3119,15 @@ section {
     .about-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .about-text {
+        padding: 0 0.25rem;
+    }
+
+    .about-domains-list li {
+        font-size: 0.9rem;
     }
 
     .about-image {
@@ -3122,10 +3185,18 @@ section {
     .case-studies-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 0 0.5rem;
     }
 
     .case-study-card {
-        padding: 1.5rem;
+        padding: 1.25rem 1rem;
+        min-width: 0;
+    }
+
+    .case-study-description,
+    .case-study-methods {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .case-study-cta {
@@ -3449,10 +3520,42 @@ section {
 }
 
 @media (max-width: 480px) {
-    .hero-tagline {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-logo .logo-text {
         font-size: 1.1rem;
     }
 
+    .hero-tagline {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        padding: 0 0.25rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        padding: 0 0.25rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .skills-section {
+        padding: 1.25rem 0;
+    }
+
+    .skills-section-title {
+        font-size: 1.1rem;
+        padding: 0 0.5rem;
+    }
+
+    .skills-list li {
+        font-size: 0.9rem;
+        padding-left: 1rem;
+    }
 
     .section-title {
         font-size: 1.75rem;

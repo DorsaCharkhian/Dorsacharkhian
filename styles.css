@@ -3078,8 +3078,50 @@ section {
     pointer-events: none;
 }
 
-/* Video: scale and fullscreen on mobile only; desktop unchanged */
+/* Canva video: hide embed on mobile, show fallback link (embed often errors on phones) */
+.video-mobile-fallback {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    .video-embed-desktop {
+        display: none !important;
+    }
+
+    .video-mobile-fallback {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: #f8fafc;
+        border-radius: 12px;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .video-mobile-fallback-text {
+        font-size: 0.95rem;
+        color: #4a5568;
+        margin: 0;
+    }
+
+    .video-mobile-fallback-btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: #667eea;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: background 0.2s ease;
+    }
+
+    .video-mobile-fallback-btn:hover {
+        background: #5a67d8;
+    }
+
     .video-responsive,
     .video-container,
     .video-container-aspect {

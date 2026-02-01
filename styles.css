@@ -300,21 +300,30 @@ body, p {
 }
 
 .hero-buttons .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    padding: 14px 26px;
+    gap: 0.6rem;
 }
 
 .btn {
-    padding: 10px 24px;
+    padding: 12px 24px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
     border: 2px solid transparent;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.btn i {
+    font-size: 1rem;
+    flex-shrink: 0;
+    line-height: 1;
 }
 
 .btn-primary {
@@ -1110,9 +1119,14 @@ section {
 .projects-drive-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    justify-content: center;
+    gap: 0.6rem;
     font-size: 1.1rem;
-    padding: 1rem 2.5rem;
+    padding: 1rem 2rem;
+}
+
+.projects-drive-link i {
+    font-size: 1.1rem;
 }
 
 .selected-work-grid {
@@ -1618,11 +1632,16 @@ section {
 .position-links .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    padding: 0.4rem 0.85rem;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
     font-size: 0.75rem;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 500;
+}
+
+.position-links .btn i {
+    font-size: 0.9rem;
 }
 
 .courses-section {

@@ -1391,6 +1391,69 @@ section {
     font-weight: 600;
 }
 
+/* Key roles grid — 2026: prominent, editorial, date + title hierarchy */
+.research .research-roles-section {
+    margin-bottom: 2rem;
+}
+
+.research .research-roles-heading {
+    color: #2d3748;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.research .research-roles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.research .research-role-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1.35rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-left: 3px solid #667eea;
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.research .research-role-card:hover {
+    border-left-color: #5a67d8;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.08);
+}
+
+.research .research-role-date {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #667eea;
+}
+
+.research .research-role-title {
+    color: #2d3748;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.research .research-role-org {
+    color: #4a5568;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
 .research .research-platforms {
     text-align: center;
     padding: 2rem;
@@ -2679,6 +2742,15 @@ section {
 
     .research .research-card {
         padding: 1.5rem;
+    }
+
+    .research .research-roles-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .research .research-role-card {
+        padding: 1.25rem 1.25rem;
     }
 
     .research .research-timeline {

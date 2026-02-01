@@ -31,9 +31,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background change on scroll
-window.addEventListener('scroll', () => {
+// Throttle helper: run at most once per `ms` (reduces scroll jank)
+function throttle(fn, ms) {
+    let last = 0, tid = null;
+    return function () {
+        const now = Date.now();
+        const elapsed = now - last;
+        if (elapsed >= ms) {
+            last = now;
+            fn();
+        } else if (!tid) {
+            tid = setTimeout(() => { tid = null; last = Date.now(); fn(); }, ms - elapsed);
+        }
+    };
+}
+
+// Navbar background change on scroll (throttled + passive)
+window.addEventListener('scroll', throttle(() => {
     const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
     if (window.scrollY > 50) {
         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
@@ -41,7 +57,7 @@ window.addEventListener('scroll', () => {
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
         navbar.style.boxShadow = 'none';
     }
-});
+}, 100), { passive: true });
 
 // Enhanced Intersection Observer for scroll reveal animations
 const observerOptions = {
@@ -158,16 +174,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Parallax effect for floating cards
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallax = document.querySelectorAll('.floating-card');
-    
-    parallax.forEach((card, index) => {
-        const speed = 0.5 + (index * 0.1);
-        const yPos = -(scrolled * speed);
-        card.style.transform = `translateY(${yPos}px)`;
-    });
+// Parallax effect for floating cards (throttled; only if cards exist)
+document.addEventListener('DOMContentLoaded', () => {
+    const parallaxCards = document.querySelectorAll('.floating-card');
+    if (parallaxCards.length === 0) return;
+    window.addEventListener('scroll', throttle(() => {
+        const scrolled = window.pageYOffset;
+        parallaxCards.forEach((card, index) => {
+            const speed = 0.5 + (index * 0.1);
+            card.style.transform = `translateY(${-(scrolled * speed)}px)`;
+        });
+    }, 80), { passive: true });
 });
 
 // Add hover effects to project cards
@@ -237,7 +254,7 @@ window.addEventListener('load', () => {
     document.body.style.transition = 'none';
 });
 
-// Add scroll progress indicator
+// Add scroll progress indicator (throttled to avoid jank)
 const progressBar = document.createElement('div');
 progressBar.style.cssText = `
     position: fixed;
@@ -247,16 +264,18 @@ progressBar.style.cssText = `
     height: 3px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     z-index: 9999;
-    transition: width 0.1s ease;
+    transition: width 0.15s ease-out;
+    pointer-events: none;
 `;
+progressBar.setAttribute('aria-hidden', 'true');
 document.body.appendChild(progressBar);
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', throttle(() => {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    progressBar.style.width = scrolled + '%';
-});
+    if (height <= 0) return;
+    progressBar.style.width = (winScroll / height) * 100 + '%';
+}, 100), { passive: true });
 
 // Add keyboard navigation support
 document.addEventListener('keydown', (e) => {
@@ -279,22 +298,17 @@ document.querySelectorAll('a, button, input, textarea').forEach(element => {
     });
 });
 
-// Align hero description width with title width
+// Align hero description width with title width (resize throttled)
 document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = document.querySelector('.hero-title');
     const heroDescription = document.querySelector('.hero-description');
     
     if (heroTitle && heroDescription) {
         const updateDescriptionWidth = () => {
-            const titleWidth = heroTitle.offsetWidth;
-            heroDescription.style.width = titleWidth + 'px';
+            heroDescription.style.width = heroTitle.offsetWidth + 'px';
         };
-        
-        // Update on load
         updateDescriptionWidth();
-        
-        // Update on resize
-        window.addEventListener('resize', updateDescriptionWidth);
+        window.addEventListener('resize', throttle(updateDescriptionWidth, 150));
     }
 });
 

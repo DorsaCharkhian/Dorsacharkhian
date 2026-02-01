@@ -12,7 +12,7 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #2d3748;
     overflow-x: hidden;
     font-weight: 400;
 }
@@ -122,7 +122,7 @@ body, p {
 
 .nav-link {
     text-decoration: none;
-    color: #333;
+    color: #2d3748;
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
@@ -156,17 +156,17 @@ body, p {
 .bar {
     width: 25px;
     height: 3px;
-    background: #333;
+    background: #2d3748;
     margin: 3px 0;
     transition: 0.3s;
 }
 
-/* Hero Section */
+/* Hero Section — soft bluish-purple palette */
 .hero {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 100%);
     position: relative;
     overflow: hidden;
     padding: 2rem 0;
@@ -969,9 +969,28 @@ section {
     border-color: white;
 }
 
-/* Projects Section */
+/* Projects Section — same color style as hero: soft bluish-purple */
 .projects {
-    background: #f8fafc;
+    background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23667eea" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.projects .container {
+    position: relative;
+    z-index: 1;
 }
 
 .case-studies-intro {
@@ -1027,14 +1046,14 @@ section {
 
 .case-study-icon i {
     font-size: 1.75rem;
-    color: #94a3b8;
+    color: #667eea;
     display: block;
 }
 
 .case-study-header {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid #e2e8f0;
     text-align: center;
 }
 
@@ -1043,22 +1062,22 @@ section {
     margin-bottom: 0.5rem;
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #2d3748;
 }
 
 .case-study-role {
     display: inline-block;
-    font-size: 0.8125rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    color: #64748b;
-    background: transparent;
-    padding: 0;
-    border-radius: 0;
+    color: #667eea;
+    background: #f3f0ff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
 }
 
 .case-study-description {
-    font-size: 0.9375rem;
-    color: #475569;
+    font-size: 0.95rem;
+    color: #4a5568;
     line-height: 1.7;
     margin-bottom: 1.5rem;
     flex: 1;
@@ -1074,34 +1093,34 @@ section {
 .case-tag {
     font-size: 0.75rem;
     font-weight: 500;
-    color: #64748b;
-    background: transparent;
-    padding: 0.25rem 0.6rem;
-    border-radius: 6px;
-    border: 1px solid #e2e8f0;
+    color: #667eea;
+    background: #f3f0ff;
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
+    border: 1px solid #a5b4fc;
 }
 
 .case-tag-outlined {
     background: transparent;
-    border: 1px solid #e2e8f0;
-    color: #64748b;
+    border: 1px solid #a5b4fc;
+    color: #667eea;
 }
 
 .case-study-cta {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #667eea;
     text-decoration: none;
     transition: color 0.2s ease, gap 0.2s ease;
     margin-top: auto;
 }
 
 .case-study-cta:hover {
-    color: #667eea;
-    gap: 0.5rem;
+    color: #764ba2;
+    gap: 0.6rem;
 }
 
 .case-study-cta i {
@@ -1390,8 +1409,8 @@ section {
     gap: 8px;
     padding: 12px 24px;
     background: white;
-    border: 2px solid #333;
-    color: #333;
+    border: 2px solid #2d3748;
+    color: #2d3748;
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
@@ -1406,7 +1425,8 @@ section {
 }
 
 .platform-btn:hover {
-    background: #333;
+    background: #667eea;
+    border-color: #667eea;
     color: white;
     transform: translateY(-2px);
 }

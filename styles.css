@@ -1370,8 +1370,12 @@ section {
     border-radius: 16px;
     padding: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     margin-bottom: 1.5rem;
+}
+
+.research .research-description {
+    border-left: 3px solid #667eea;
 }
 
 .research .research-description p {
@@ -1401,6 +1405,8 @@ section {
     font-size: 1.35rem;
     font-weight: 600;
     margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -1410,20 +1416,21 @@ section {
 .research .research-roles-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 1.25rem;
 }
 
 .research .research-role-card {
     background: #ffffff;
     border-radius: 14px;
-    padding: 1.35rem 1.5rem;
+    padding: 1.5rem 1.5rem;
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-left: 3px solid #667eea;
-    box-shadow: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.4rem;
+    min-height: 5.5rem;
 }
 
 .research .research-role-card:hover {
@@ -1457,11 +1464,12 @@ section {
 .research .research-platforms {
     text-align: center;
     padding: 2rem;
+    border-left: 3px solid #667eea;
 }
 
 .research .research-platforms p {
     color: #4a5568;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -1500,15 +1508,17 @@ section {
 }
 
 .research .peer-review-section {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     padding: 0;
 }
 
 .research .peer-review-heading {
     color: #2d3748;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -1530,6 +1540,7 @@ section {
 .research .peer-review-section > p {
     color: #4a5568;
     margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
     line-height: 1.7;
     font-size: 1rem;
 }
@@ -1722,11 +1733,12 @@ section {
 
 .position-responsibilities li {
     color: #4a5568;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     padding-left: 1.5rem;
     position: relative;
-    line-height: 1.6;
-    font-size: 1rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    max-width: 42ch;
 }
 
 .position-responsibilities li::before {
@@ -1762,6 +1774,77 @@ section {
 .position-links .btn i {
     font-size: 0.9rem;
     color: inherit;
+}
+
+/* Selected Student Work — sample case studies from Pratt IXD */
+.student-work-section {
+    margin-top: 2.5rem;
+}
+
+.student-work-heading {
+    color: #2d3748;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.student-work-intro {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.student-work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.student-work-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 1.25rem 1.25rem;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-left: 3px solid #667eea;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.student-work-card:hover {
+    border-left-color: #5a67d8;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.08);
+}
+
+.student-work-title {
+    color: #2d3748;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.student-work-meta {
+    color: #4a5568;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.student-work-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    color: #667eea;
+    opacity: 0.8;
 }
 
 .courses-section {
@@ -3028,6 +3111,15 @@ section {
     
     .position-links {
         justify-content: flex-start;
+    }
+
+    .student-work-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .student-work-card {
+        padding: 1rem 1.25rem;
     }
 }
 

@@ -2470,6 +2470,21 @@ section {
     margin-bottom: 1.25rem;
 }
 
+.case-study-thesis-link {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.case-study-thesis-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.case-study-thesis-link a:hover {
+    text-decoration: underline;
+}
+
 .case-study-intro {
     font-size: 1.1rem;
     line-height: 1.7;
@@ -2571,6 +2586,16 @@ section {
     border-bottom: none;
 }
 
+.case-study-snapshot-title a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.case-study-snapshot-title a:hover {
+    color: #667eea;
+}
+
 .case-study-snapshot-list {
     margin: 0;
     padding: 0;
@@ -2609,6 +2634,16 @@ section {
     margin-bottom: 1.25rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #e2e8f0;
+}
+
+.case-study-section-title a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.case-study-section-title a:hover {
+    color: #667eea;
 }
 
 .case-study-text {

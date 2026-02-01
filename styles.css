@@ -988,9 +988,9 @@ section {
     border-color: white;
 }
 
-/* Projects Section — plain background, no color */
+/* Projects / Case Studies — 2026-ready: soft section bg, white cards, minimal depth */
 .projects {
-    background: #ffffff;
+    background: #F6F7FB;
 }
 
 .projects .container {
@@ -1021,16 +1021,16 @@ section {
     background: #ffffff;
     border-radius: 16px;
     padding: 2rem;
-    border: none;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
 }
 
 .case-study-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .case-study-icon {

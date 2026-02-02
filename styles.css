@@ -447,25 +447,37 @@ body, p {
     margin-bottom: 0;
 }
 
-/* Home page only: one viewport, stacked layout — proportional spacing */
+/* Home page only: one viewport, no scroll on laptop — hero height optimized */
 .page-home .hero {
-    min-height: 38vh;
-    padding: 2rem 0 1rem;
+    min-height: 0;
+    max-height: 72vh;
+    padding: 1.25rem 0 0.75rem;
+    display: flex;
+    align-items: center;
+}
+.page-home .hero-container {
+    width: 100%;
+}
+.page-home .hero-text-wrapper {
+    max-width: 740px;
 }
 .page-home .hero-tagline {
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     line-height: 1.38;
 }
 .page-home .hero-description {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     line-height: 1.6;
 }
 .page-home .hero-buttons {
-    margin-top: 0.75rem;
-    gap: 1.5rem;
+    margin-top: 0.5rem;
+    gap: 1rem;
+}
+.page-home .hero-buttons .btn {
+    padding: 11px 20px;
 }
 .page-home section:not(.hero) {
-    margin-top: 2.25rem;
+    margin-top: 2rem;
 }
 .page-home .research-signature {
     padding: 1.5rem 0 2rem;

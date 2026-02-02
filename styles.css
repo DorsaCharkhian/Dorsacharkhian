@@ -447,6 +447,39 @@ body, p {
     margin-bottom: 0;
 }
 
+/* Home page only: fit in one viewport, no scroll */
+.page-home .hero {
+    min-height: 38vh;
+    padding: 0.75rem 0;
+}
+.page-home .hero-tagline {
+    margin-bottom: 0.6rem;
+}
+.page-home .hero-description {
+    margin-bottom: 1rem;
+}
+.page-home .hero-buttons {
+    margin-top: 0.25rem;
+}
+.page-home section:not(.hero) {
+    margin-top: 1rem;
+}
+.page-home .research-signature {
+    padding: 1rem 0;
+}
+.page-home .research-signature-title {
+    margin-bottom: 0.6rem;
+}
+.page-home .research-signature-grid {
+    gap: 1rem;
+}
+.page-home .research-signature-list li {
+    margin-bottom: 0.15rem;
+}
+.page-home .footer {
+    padding: 0.5rem 0;
+}
+
 .hero-featured-label {
     font-size: 0.75rem;
     font-weight: 600;
@@ -3115,6 +3148,15 @@ section {
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
+
+    .page-home .hero {
+        min-height: 32vh;
+        padding: 0.75rem 0;
+    }
+    .page-home .hero-tagline { margin-bottom: 0.5rem; }
+    .page-home .hero-description { margin-bottom: 0.75rem; }
+    .page-home .research-signature { padding: 0.75rem 0; }
+    .page-home .research-signature-title { margin-bottom: 0.5rem; }
 
     .section-header {
         padding: 0 0.5rem;

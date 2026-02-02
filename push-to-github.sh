@@ -1,25 +1,28 @@
 #!/bin/bash
 
 # Script to push changes to GitHub
-cd /Users/dorsacharkhian/Desktop/Dorsacharkhian-main
+# If push fails: use HTTPS + Personal Access Token (GitHub → Settings → Developer settings → PAT)
+# or set up SSH key: https://docs.github.com/en/authentication
+cd "$(dirname "$0")"
 
 echo "🔄 Checking git status..."
 git status
 
 echo ""
-echo "📦 Adding all changes..."
-git add index.html styles.css
+echo "📦 Adding ALL changes (HTML, CSS, JS, images, new/deleted files)..."
+git add -A
 
 echo ""
 echo "💾 Committing changes..."
-git commit -m "Update Core Competencies and remove Summary/Experience sections" || echo "No new changes to commit"
+if git diff --staged --quiet 2>/dev/null; then
+  echo "⚠️  No changes staged — nothing to commit. (Add files first.)"
+else
+  git commit -m "Update portfolio: content and assets"
+fi
 
 echo ""
-echo "🔄 Trying to change remote to HTTPS..."
-git remote set-url origin https://github.com/DorsaCharkhian/Dorsacharkhian.git
-
-echo ""
-echo "🚀 Pushing to GitHub (HTTPS)..."
+echo "🔄 Remote: $(git remote get-url origin)"
+echo "🚀 Pushing to GitHub..."
 git push origin main
 
 echo ""

@@ -456,23 +456,44 @@ body, p {
 .page-home .footer {
     margin-top: auto;
 }
-/* Hero (purple section): bigger so content sits nicely in the middle */
+/* Hero: two-column on desktop, single column on tablet/mobile */
 .page-home .hero {
     min-height: 42vh;
-    max-height: 75vh;
+    max-height: 85vh;
     padding: 2.5rem 0 2rem;
     display: flex;
     align-items: center;
 }
 .page-home .hero-container {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+}
+.page-home .hero-content {
+    align-items: center;
+    max-width: none;
 }
 .page-home .hero-text-wrapper {
-    max-width: 740px;
+    max-width: 520px;
 }
 .page-home .hero-tagline {
-    margin-bottom: 0.6rem;
-    line-height: 1.38;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+.page-home .hero-tagline .gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 .page-home .hero-description {
     margin-bottom: 1.25rem;
@@ -481,9 +502,32 @@ body, p {
 .page-home .hero-buttons {
     margin-top: 0.5rem;
     gap: 1rem;
+    justify-content: center;
 }
 .page-home .hero-buttons .btn {
     padding: 11px 20px;
+}
+.page-home .hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: none;
+}
+
+@media (min-width: 1024px) {
+    .page-home .hero-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        text-align: left;
+    }
+    .page-home .hero-content {
+        text-align: left;
+        align-items: flex-start;
+    }
+    .page-home .hero-buttons {
+        justify-content: flex-start;
+    }
 }
 /* Clear separation: Hero vs Research Signature (distinct section) */
 .page-home section:not(.hero) {
@@ -612,6 +656,67 @@ body, p {
     height: 100%;
     object-fit: cover;
     object-position: center 20%;
+}
+
+/* Hero image stack (home): depth + subtle motion */
+.hero-image-stack {
+    position: relative;
+    width: 320px;
+    height: 380px;
+    margin: 0 auto;
+    animation: heroFloat 14s ease-in-out infinite;
+}
+.hero-image-card {
+    position: absolute;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: #fff;
+}
+.hero-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* Front card (portrait): sharp; back cards: slight blur for depth */
+.hero-image-card--1 {
+    z-index: 4;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 280px;
+    filter: none;
+}
+.hero-image-card--2 {
+    z-index: 3;
+    bottom: 20px;
+    left: 0;
+    width: 140px;
+    height: 100px;
+    filter: blur(3px);
+}
+.hero-image-card--3 {
+    z-index: 2;
+    bottom: 40px;
+    right: 0;
+    width: 150px;
+    height: 110px;
+    filter: blur(4px);
+}
+.hero-image-card--4 {
+    z-index: 1;
+    top: 60px;
+    right: -10px;
+    width: 130px;
+    height: 95px;
+    filter: blur(5px);
+}
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .expertise-tags {
@@ -3179,6 +3284,17 @@ section {
         min-height: 32vh;
         padding: 0.75rem 0;
     }
+    .page-home .hero-visual {
+        display: flex;
+    }
+    .page-home .hero-image-stack {
+        width: 260px;
+        height: 320px;
+    }
+    .page-home .hero-image-card--1 { width: 180px; height: 230px; }
+    .page-home .hero-image-card--2 { width: 110px; height: 80px; }
+    .page-home .hero-image-card--3 { width: 120px; height: 88px; }
+    .page-home .hero-image-card--4 { width: 100px; height: 72px; }
     .page-home .hero-tagline { margin-bottom: 0.5rem; }
     .page-home .hero-description { margin-bottom: 0.75rem; }
     .page-home .research-signature { padding: 0.75rem 0; }

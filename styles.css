@@ -664,11 +664,11 @@ body, p {
     object-position: center 20%;
 }
 
-/* Hero image stack: smaller sizes, breathing room, bg cards readable (overlay only, no blur) */
+/* Hero image stack: portrait center, two artifacts left/right as supporting evidence */
 .hero-image-stack {
     position: relative;
     width: 100%;
-    min-height: 400px;
+    min-height: 380px;
     margin: 0 auto;
     padding: 2rem;
     overflow: visible;
@@ -689,32 +689,33 @@ body, p {
     object-fit: cover;
     display: block;
 }
-/* Portrait (front): smaller so space around, large radius, slightly right of center, z-index 3, no blur */
+/* Portrait (primary): smaller, centered between the two artifacts, z-index 3 */
 .hero-image-card--portrait {
     position: relative;
     z-index: 3;
-    width: clamp(320px, 36vw, 380px);
+    width: clamp(280px, 32vw, 340px);
     aspect-ratio: 3 / 4;
-    border-radius: 22px;
+    border-radius: 20px;
     transform: none;
     filter: none;
-    margin-left: 6%;
+    margin-left: 0;
 }
 .hero-image-card--portrait img {
     object-fit: cover;
     object-position: center 20%;
 }
-/* Background #1 — UX Methode: ~70–80% of portrait, dark overlay only (no blur), readable, motion */
+/* Artifact #1 — UX Methode: left side, smaller “supporting evidence” size, slight overlay, motion */
 .hero-image-card--bg1 {
     position: absolute;
-    top: -40px;
+    top: 50%;
     left: 0;
+    transform: translateY(-50%);
     right: auto;
     z-index: 1;
-    width: clamp(230px, 26vw, 300px);
+    width: clamp(200px, 22vw, 260px);
     opacity: 1;
     filter: none;
-    border-radius: 18px;
+    border-radius: 16px;
     animation: heroBgFloat 14s ease-in-out infinite alternate;
     animation-delay: 0s;
 }
@@ -722,7 +723,7 @@ body, p {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(15, 23, 42, 0.32);
+    background: rgba(15, 23, 42, 0.36);
     border-radius: inherit;
     pointer-events: none;
 }
@@ -732,17 +733,18 @@ body, p {
     object-position: center;
     filter: none;
 }
-/* Background #2 — Pandora: ~70–80% of portrait, dark overlay only (no blur), readable, motion */
+/* Artifact #2 — Pandora: right side, smaller “supporting evidence” size, slight overlay, motion */
 .hero-image-card--bg2 {
     position: absolute;
-    bottom: -40px;
+    top: 50%;
     right: 0;
     left: auto;
+    transform: translateY(-50%);
     z-index: 2;
-    width: clamp(230px, 26vw, 300px);
+    width: clamp(200px, 22vw, 260px);
     opacity: 1;
     filter: none;
-    border-radius: 20px;
+    border-radius: 18px;
     animation: heroBgFloat 14s ease-in-out infinite alternate;
     animation-delay: 2.5s;
 }
@@ -750,7 +752,7 @@ body, p {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(15, 23, 42, 0.28);
+    background: rgba(15, 23, 42, 0.32);
     border-radius: inherit;
     pointer-events: none;
 }
@@ -761,8 +763,8 @@ body, p {
     filter: none;
 }
 @keyframes heroBgFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { transform: translateY(-50%); }
+    50% { transform: translateY(calc(-50% - 10px)); }
 }
 
 .expertise-tags {
@@ -3340,28 +3342,29 @@ section {
         box-sizing: border-box;
     }
     .page-home .hero-image-stack {
-        min-height: 300px;
-        padding: 1.5rem;
+        min-height: 280px;
+        padding: 1.25rem;
         width: 100%;
         max-width: 100vw;
         justify-content: center;
         margin-left: 0;
     }
     .page-home .hero-image-card--portrait {
-        width: min(260px, 68vw);
+        width: min(240px, 62vw);
         margin-left: 0;
     }
     .page-home .hero-image-card--bg1 {
-        width: min(180px, 48vw);
-        top: -24px;
-        left: 4%;
-        right: auto;
+        width: min(160px, 42vw);
+        left: 2%;
+        top: 50%;
+        transform: translateY(-50%);
     }
     .page-home .hero-image-card--bg2 {
-        width: min(180px, 48vw);
-        bottom: -24px;
-        right: 4%;
+        width: min(160px, 42vw);
+        right: 2%;
         left: auto;
+        top: 50%;
+        transform: translateY(-50%);
     }
     .page-home .hero-tagline { margin-bottom: 0.75rem; font-size: 1.25rem; }
     .page-home .hero-description { margin-bottom: 1.25rem; }

@@ -450,7 +450,7 @@ body, p {
 /* Home page only: one viewport, stacked layout — proportional spacing */
 .page-home .hero {
     min-height: 38vh;
-    padding: 1.25rem 0 1rem;
+    padding: 2rem 0 1rem;
 }
 .page-home .hero-tagline {
     margin-bottom: 1rem;

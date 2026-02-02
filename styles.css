@@ -390,7 +390,7 @@ body, p {
     text-decoration: underline;
 }
 
-/* Home — Research Signature: framework, three clusters */
+/* Home — Research Expertise: informational, grouped categories */
 .research-signature {
     padding: 2rem 0;
     background: #fff;
@@ -408,14 +408,23 @@ body, p {
     color: #6b7280;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
     text-align: center;
+}
+
+.research-signature-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 2.25rem;
 }
 
 .research-signature-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .research-signature-cluster {
@@ -543,16 +552,19 @@ body, p {
     margin-top: 3rem;
 }
 .page-home .research-signature {
-    padding: 2rem 0 3rem;
+    padding: 2.5rem 0 3rem;
 }
 .page-home .research-signature-title {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+.page-home .research-signature-intro {
+    margin-bottom: 2.5rem;
 }
 .page-home .research-signature-grid {
-    gap: 2.5rem;
+    gap: 3rem;
 }
 .page-home .research-signature-cluster {
-    gap: 0.4rem;
+    gap: 0.5rem;
 }
 .page-home .research-signature-list li {
     line-height: 1.45;

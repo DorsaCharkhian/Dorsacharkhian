@@ -8,6 +8,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    min-height: 100%;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
     color: #2d3748;
     overflow-x: hidden;
     font-weight: 400;
+    min-height: 100%;
 }
 
 /* Unified Typography */
@@ -178,7 +180,8 @@ body, p {
     align-items: center;
     background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 100%);
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     padding: 1.5rem 0;
     margin-top: 64px;
 }

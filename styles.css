@@ -559,7 +559,7 @@ body, p {
 /* Home image grid: 5 per row, edge images partially visible (peek), 16px gap, 12px radius */
 .home-image-grid-section {
     padding: 3rem 0 2rem;
-    background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 100%);
+    background: linear-gradient(135deg, #ede9fe 0%, #e0e7ff 50%, #eef2ff 100%);
 }
 .home-image-grid-wrapper {
     margin: 0 auto;

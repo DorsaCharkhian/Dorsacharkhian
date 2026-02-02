@@ -447,11 +447,20 @@ body, p {
     margin-bottom: 0;
 }
 
-/* Home page only: one viewport, no scroll on laptop — hero height optimized */
+/* Home page: sticky footer + hero section sizing */
+.page-home {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.page-home .footer {
+    margin-top: auto;
+}
+/* Hero (purple section): bigger so content sits nicely in the middle */
 .page-home .hero {
-    min-height: 0;
-    max-height: 72vh;
-    padding: 1.25rem 0 0.75rem;
+    min-height: 42vh;
+    max-height: 75vh;
+    padding: 2.5rem 0 2rem;
     display: flex;
     align-items: center;
 }
@@ -495,10 +504,6 @@ body, p {
 .page-home .research-signature-list li {
     line-height: 1.45;
     margin-bottom: 0.25rem;
-}
-/* Generous space above footer so it doesn’t collide with content */
-.page-home .footer {
-    padding: 1.25rem 0;
 }
 
 .hero-featured-label {

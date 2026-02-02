@@ -476,11 +476,12 @@ body, p {
 .page-home .hero-buttons .btn {
     padding: 11px 20px;
 }
+/* Clear separation: Hero vs Research Signature (distinct section) */
 .page-home section:not(.hero) {
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 .page-home .research-signature {
-    padding: 1.5rem 0 2rem;
+    padding: 2rem 0 3rem;
 }
 .page-home .research-signature-title {
     margin-bottom: 1.25rem;
@@ -495,8 +496,9 @@ body, p {
     line-height: 1.45;
     margin-bottom: 0.25rem;
 }
+/* Generous space above footer so it doesn’t collide with content */
 .page-home .footer {
-    padding: 1rem 0;
+    padding: 1.25rem 0;
 }
 
 .hero-featured-label {

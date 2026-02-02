@@ -556,25 +556,31 @@ body, p {
     margin-bottom: 0.25rem;
 }
 
-/* Home image grid: after Research Signature — 3-column, documentary style (like reference) */
+/* Home image grid: 5 per row, edge images partially visible (peek), 16px gap, 12px radius */
 .home-image-grid-section {
     padding: 3rem 0 2rem;
     background: #fff;
 }
 .home-image-grid-wrapper {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+    overflow-x: hidden;
+    /* Visible width ≈ 4 full + 2 half images + gaps so first/last peek */
+    max-width: 1064px; /* 3*250 + 2*125 + 3*16 + 2*8 */
 }
 .home-image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 250px);
+    grid-template-rows: repeat(2, auto);
     gap: 16px;
-    padding: 24px;
+    padding: 24px 0;
+    width: max-content;
+    max-width: none;
+    margin: 0 auto;
 }
 .home-image-grid-item {
     position: relative;
-    width: 100%;
+    width: 250px;
     aspect-ratio: 4 / 3;
     border-radius: 12px;
     overflow: hidden;
@@ -586,16 +592,41 @@ body, p {
     object-fit: cover;
     display: block;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+    .home-image-grid-wrapper {
+        max-width: 944px; /* 3*220 + 2*110 + 3*16 + 2*8 */
+    }
     .home-image-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 16px;
+        grid-template-columns: repeat(5, 220px);
+    }
+    .home-image-grid-item {
+        width: 220px;
+    }
+}
+@media (max-width: 768px) {
+    .home-image-grid-wrapper {
+        max-width: 768px;
+        padding: 0 16px;
+    }
+    .home-image-grid {
+        grid-template-columns: repeat(5, 180px);
+        gap: 12px;
+        padding: 16px 0;
+    }
+    .home-image-grid-item {
+        width: 180px;
     }
 }
 @media (max-width: 480px) {
+    .home-image-grid-wrapper {
+        max-width: 600px; /* 3*140 + 2*70 + 3*10 + 2*5 */
+    }
     .home-image-grid {
-        grid-template-columns: 1fr;
-        padding: 16px;
+        grid-template-columns: repeat(5, 140px);
+        gap: 10px;
+    }
+    .home-image-grid-item {
+        width: 140px;
     }
     .home-image-grid-wrapper {
         padding: 0 16px;

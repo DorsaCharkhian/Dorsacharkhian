@@ -447,44 +447,44 @@ body, p {
     margin-bottom: 0;
 }
 
-/* Home page only: one viewport, stacked layout — spacing matches reference */
+/* Home page only: one viewport, stacked layout — proportional spacing */
 .page-home .hero {
     min-height: 38vh;
-    padding: 1rem 0 0.75rem;
+    padding: 1.25rem 0 1rem;
 }
 .page-home .hero-tagline {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     line-height: 1.38;
 }
 .page-home .hero-description {
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
     line-height: 1.6;
 }
 .page-home .hero-buttons {
-    margin-top: 0.5rem;
-    gap: 1.25rem;
+    margin-top: 0.75rem;
+    gap: 1.5rem;
 }
 .page-home section:not(.hero) {
-    margin-top: 1.75rem;
+    margin-top: 2.25rem;
 }
 .page-home .research-signature {
-    padding: 1.25rem 0 1.5rem;
+    padding: 1.5rem 0 2rem;
 }
 .page-home .research-signature-title {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 .page-home .research-signature-grid {
-    gap: 2rem;
+    gap: 2.5rem;
 }
 .page-home .research-signature-cluster {
-    gap: 0.35rem;
+    gap: 0.4rem;
 }
 .page-home .research-signature-list li {
     line-height: 1.45;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
 }
 .page-home .footer {
-    padding: 0.75rem 0;
+    padding: 1rem 0;
 }
 
 .hero-featured-label {

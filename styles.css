@@ -447,34 +447,109 @@ body, p {
     margin-bottom: 0;
 }
 
-/* Home page only: fit in one viewport, no scroll */
-.page-home .hero {
-    min-height: 38vh;
-    padding: 0.75rem 0;
+/* Home page only: one viewport, horizontal layout on laptop, calm spacing */
+.page-home .home-viewport {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
-.page-home .hero-tagline {
-    margin-bottom: 0.6rem;
+
+@media (min-width: 1024px) {
+    .page-home .home-viewport {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 3rem;
+        align-items: start;
+        padding: 0 2.5rem;
+    }
+    .page-home .hero {
+        min-height: 0;
+        padding: 0.5rem 0 1rem;
+        margin-top: 64px;
+        display: flex;
+        align-items: center;
+    }
+    .page-home .hero-container {
+        width: 100%;
+    }
+    .page-home .hero-content {
+        text-align: left;
+        align-items: flex-start;
+    }
+    .page-home .hero-text-wrapper {
+        max-width: none;
+    }
+    .page-home .hero-tagline {
+        margin-bottom: 0.75rem;
+    }
+    .page-home .hero-description {
+        margin-bottom: 1.25rem;
+        line-height: 1.6;
+    }
+    .page-home .hero-buttons {
+        margin-top: 0.25rem;
+        justify-content: flex-start;
+    }
+    .page-home .research-signature {
+        margin-top: 64px;
+        padding: 0.5rem 0 1rem 0;
+        padding-left: 2rem;
+        border-left: 1px solid rgba(0, 0, 0, 0.06);
+        background: transparent;
+    }
+    .page-home .research-signature .container {
+        max-width: none;
+        padding: 0;
+    }
+    .page-home .research-signature-title {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+    .page-home .research-signature-grid {
+        gap: 2rem 2.5rem;
+    }
+    .page-home .research-signature-cluster {
+        gap: 0.35rem;
+    }
+    .page-home .research-signature-list li {
+        line-height: 1.45;
+        margin-bottom: 0.2rem;
+    }
 }
-.page-home .hero-description {
-    margin-bottom: 1rem;
-}
-.page-home .hero-buttons {
-    margin-top: 0.25rem;
-}
-.page-home section:not(.hero) {
-    margin-top: 1rem;
-}
-.page-home .research-signature {
-    padding: 1rem 0;
-}
-.page-home .research-signature-title {
-    margin-bottom: 0.6rem;
-}
-.page-home .research-signature-grid {
-    gap: 1rem;
-}
-.page-home .research-signature-list li {
-    margin-bottom: 0.15rem;
+
+/* Stacked layout (tablet/mobile): one viewport, balanced spacing */
+@media (max-width: 1023px) {
+    .page-home .hero {
+        min-height: 38vh;
+        padding: 0.75rem 0;
+    }
+    .page-home .hero-tagline {
+        margin-bottom: 0.6rem;
+    }
+    .page-home .hero-description {
+        margin-bottom: 1rem;
+    }
+    .page-home .hero-buttons {
+        margin-top: 0.25rem;
+    }
+    .page-home .research-signature {
+        padding: 1rem 0;
+        border-left: none;
+        margin-top: 0;
+    }
+    .page-home section:not(.hero) {
+        margin-top: 1rem;
+    }
+    .page-home .research-signature-title {
+        margin-bottom: 0.6rem;
+    }
+    .page-home .research-signature-grid {
+        gap: 1rem;
+    }
+    .page-home .research-signature-list li {
+        margin-bottom: 0.15rem;
+    }
 }
 .page-home .footer {
     padding: 0.5rem 0;

@@ -171,15 +171,15 @@ body, p {
     transition: 0.3s;
 }
 
-/* Hero Section — soft bluish-purple palette */
+/* Hero Section — soft bluish-purple palette (~20–25% reduced height/padding) */
 .hero {
-    min-height: 85vh;
+    min-height: 64vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 100%);
     position: relative;
     overflow: hidden;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     margin-top: 64px;
 }
 
@@ -202,7 +202,7 @@ body, p {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
     position: relative;
     z-index: 1;
     min-height: auto;
@@ -315,9 +315,45 @@ body, p {
     margin-right: auto;
 }
 
-/* Research & Product Skills — home page, below hero */
+/* Featured Case Studies — home page, between hero and skills */
+.hero-featured-section {
+    padding: 1.5rem 0;
+    background: #f8fafc;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.hero-featured-section .container {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-featured-section .hero-featured-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hero-featured-section .hero-featured-list li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+}
+
+.hero-featured-section .hero-featured-list a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.hero-featured-section .hero-featured-list a:hover {
+    text-decoration: underline;
+}
+
+/* Research & Product Skills — home page, below featured; de-emphasized, compact */
 .skills-section {
-    padding: 2.5rem 0;
+    padding: 1.5rem 0;
     background: #fff;
 }
 
@@ -328,29 +364,30 @@ body, p {
 }
 
 .skills-section-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 1.25rem;
-    text-align: center;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+    text-align: left;
 }
 
 .skills-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.25rem 2rem;
+    max-width: 100%;
 }
 
 .skills-list li {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.875rem;
+    line-height: 1.5;
     color: #4a5568;
-    padding-left: 1.25rem;
+    padding-left: 1rem;
     position: relative;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
 }
 
 .skills-list li::before {
@@ -359,6 +396,7 @@ body, p {
     left: 0;
     color: #667eea;
     font-weight: 700;
+    font-size: 0.75rem;
 }
 
 .hero-featured-label {
@@ -2988,8 +3026,8 @@ section {
     }
 
     .hero {
-        padding: 3rem 0;
-        min-height: 70vh;
+        padding: 1.5rem 0;
+        min-height: 55vh;
         margin-top: 64px;
     }
 
@@ -3046,6 +3084,14 @@ section {
         padding: 0 1rem;
     }
 
+    .hero-featured-section {
+        padding: 1rem 0;
+    }
+
+    .hero-featured-section .hero-featured-list li {
+        font-size: 0.9rem;
+    }
+
     .hero-buttons {
         gap: 1rem;
     }
@@ -3076,13 +3122,14 @@ section {
     .skills-list {
         max-width: 100%;
         padding: 0 0.5rem;
+        grid-template-columns: 1fr;
     }
 
     .skills-list li {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        padding-left: 1.25rem;
-        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding-left: 1rem;
+        margin-bottom: 0.25rem;
     }
 
     .hero-visual {
@@ -3548,7 +3595,7 @@ section {
     }
 
     .skills-section-title {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         padding: 0 0.5rem;
     }
 

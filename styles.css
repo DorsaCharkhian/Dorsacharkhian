@@ -1004,27 +1004,29 @@ section {
     transform: translateY(-1px);
 }
 
-/* About Section  - single-column editorial layout, calm and readable */
+/* About Section: editorial, section-based; calm, research-focused */
 .about {
     background: white;
-    padding: 2rem 0 4rem;
+    padding: 2.5rem 0 0;
     margin-top: 70px;
 }
 
 .about-container {
-    max-width: 100%;
+    max-width: 710px;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
 .about-editorial {
-    max-width: 700px;
+    max-width: 100%;
     margin: 0 auto;
+    padding-bottom: 0.5rem;
     text-align: left;
 }
 
 .about .about-header.section-header {
     text-align: left;
-    margin-bottom: 2rem;
+    margin-bottom: 2.25rem;
 }
 
 .about .about-header .section-title {
@@ -1039,9 +1041,9 @@ section {
 
 .about-body p {
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.82;
     color: #4a5568;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
     font-weight: 400;
 }
 
@@ -1049,57 +1051,75 @@ section {
     margin-bottom: 0;
 }
 
-/* Belief statement  - subtle emphasis, no heavy border */
+/* Belief statement: accent divider only, no heavy border */
 .about-body p.about-belief {
-    margin-top: 2rem;
+    margin-top: 2.25rem;
     margin-bottom: 0;
     padding-left: 1rem;
     border-left: 3px solid #667eea;
 }
 
-/* My Process  - card-based; matches .home-featured visual style */
-.about-process {
+/* My Process band: subtle tinted background for section separation */
+.about-process-band {
+    width: 100%;
+    background: #f8f7fc;
+    padding: 3.5rem 0 4rem;
     margin-top: 3rem;
-    padding: 2rem 1.5rem;
-    background: #f8fafc;
-    border-radius: 12px;
+}
+
+.about-process {
+    margin: 0;
+    padding: 0;
+    background: transparent;
 }
 
 .about-process-title {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-weight: 600;
-    color: #2d3748;
     margin-bottom: 1rem;
-    text-align: center;
+    text-align: left;
+}
+
+.about-process-title .heading-accent {
+    font-weight: 700;
 }
 
 .about-process-intro {
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.82;
     color: #4a5568;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     font-weight: 400;
-    text-align: center;
+    text-align: left;
 }
 
 .about-process-cards {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .about-process-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .about-process .home-featured-card {
-    min-height: 240px;
+    min-height: 220px;
+    padding: 1.5rem;
+    border-radius: 12px;
 }
 
 .about-process .home-featured-card p {
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.65;
     color: #4a5568;
     margin: 0;
 }
 
 .about-process p {
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.82;
     color: #4a5568;
     margin-bottom: 0;
     font-weight: 400;
@@ -3556,6 +3576,15 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .about-process-band {
+        padding: 2.5rem 0 3rem;
+        margin-top: 2.5rem;
+    }
+
+    .about-container {
+        padding: 0 1rem;
+    }
+
     .home-featured-card {
         padding: 1.25rem;
     }
@@ -3602,7 +3631,7 @@ section {
 
 
     .about {
-        padding: 1.5rem 0 3rem;
+        padding: 1.5rem 0 0;
     }
 
     .about .section-header {

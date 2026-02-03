@@ -1086,6 +1086,11 @@ section {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.about-process .home-featured-card {
+    aspect-ratio: 1;
+    overflow-y: auto;
+}
+
 .about-process .home-featured-card p {
     font-size: 1rem;
     line-height: 1.6;

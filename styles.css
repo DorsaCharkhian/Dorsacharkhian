@@ -1012,7 +1012,7 @@ section {
 }
 
 .about-container {
-    max-width: 710px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -1041,9 +1041,9 @@ section {
 
 .about-body p {
     font-size: 1.1rem;
-    line-height: 1.82;
+    line-height: 1.88;
     color: #4a5568;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.85rem;
     font-weight: 400;
 }
 
@@ -1059,12 +1059,12 @@ section {
     border-left: 3px solid #667eea;
 }
 
-/* My Process band: subtle tinted background for section separation */
+/* My Process band: subtle tinted background, distinct chapter spacing */
 .about-process-band {
     width: 100%;
     background: #f8f7fc;
-    padding: 3.5rem 0 4rem;
-    margin-top: 3rem;
+    padding: 4rem 0 4.5rem;
+    margin-top: 4rem;
 }
 
 .about-process {
@@ -1077,7 +1077,7 @@ section {
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    text-align: left;
+    text-align: center;
 }
 
 .about-process-title .heading-accent {
@@ -1090,12 +1090,15 @@ section {
     color: #4a5568;
     margin-bottom: 2.5rem;
     font-weight: 400;
-    text-align: left;
+    text-align: center;
+    max-width: 100%;
 }
 
 .about-process-cards {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    align-items: stretch;
 }
 
 @media (max-width: 900px) {
@@ -1105,9 +1108,12 @@ section {
 }
 
 .about-process .home-featured-card {
-    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
     padding: 1.5rem;
     border-radius: 12px;
+    box-sizing: border-box;
 }
 
 .about-process .home-featured-card p {
@@ -3577,8 +3583,8 @@ section {
     }
 
     .about-process-band {
-        padding: 2.5rem 0 3rem;
-        margin-top: 2.5rem;
+        padding: 3rem 0 3.5rem;
+        margin-top: 3rem;
     }
 
     .about-container {

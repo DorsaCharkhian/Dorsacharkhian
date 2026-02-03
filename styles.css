@@ -1004,69 +1004,103 @@ section {
     transform: translateY(-1px);
 }
 
-/* About Section — aligned with case study quality and tone */
+/* About Section — single-column editorial layout, calm and readable */
 .about {
     background: white;
     padding: 2rem 0 4rem;
     margin-top: 70px;
 }
 
-.about .section-header {
-    margin-bottom: 2.5rem;
+.about-container {
+    max-width: 100%;
+    padding: 0 20px;
 }
 
-.about .section-subtitle {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #4a5568;
-    max-width: 640px;
+.about-editorial {
+    max-width: 700px;
     margin: 0 auto;
-    line-height: 1.4;
+    text-align: left;
 }
 
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 3rem;
-    align-items: start;
+.about .about-header.section-header {
+    text-align: left;
+    margin-bottom: 2rem;
 }
 
-.about-image {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-}
-
-.about-text {
-    flex: 1;
-    min-width: 0;
+.about .about-header .section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2d3748;
 }
 
 .about-body {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .about-body p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #4a5568;
-    margin-bottom: 1.25rem;
-    max-width: 65ch;
+    margin-bottom: 1.5rem;
     font-weight: 400;
 }
 
-.about-body p:last-child {
+.about-body p:last-of-type {
     margin-bottom: 0;
 }
 
-/* Belief statement — intentional emphasis, case-study accent */
+/* Belief statement — subtle emphasis, no heavy border */
 .about-body p.about-belief {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
     padding-left: 1rem;
     border-left: 3px solid #667eea;
+}
+
+/* My Process — same typography, clear separation by spacing */
+.about-process {
+    margin-top: 3rem;
+    padding-top: 2rem;
+}
+
+.about-process-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1.25rem;
+}
+
+.about-process p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+/* Legacy: about-content / about-text (when used elsewhere) */
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-text {
+    min-width: 0;
+}
+
+.about .section-header {
+    margin-bottom: 2rem;
+}
+
+.about .section-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #4a5568;
+    line-height: 1.4;
+}
+
+.about-image {
+    display: none;
 }
 
 .about-text h3 {

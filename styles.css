@@ -1057,17 +1057,40 @@ section {
     border-left: 3px solid #667eea;
 }
 
-/* My Process — same typography, clear separation by spacing */
+/* My Process — card-based; matches .home-featured visual style */
 .about-process {
     margin-top: 3rem;
-    padding-top: 2rem;
+    padding: 2rem 1.5rem;
+    background: #f8fafc;
+    border-radius: 12px;
 }
 
 .about-process-title {
     font-size: 1.25rem;
     font-weight: 600;
     color: #2d3748;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about-process-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.about-process-cards {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.about-process .home-featured-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin: 0;
 }
 
 .about-process p {
@@ -3523,6 +3546,10 @@ section {
     .home-featured-cards {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    .about-process-cards {
+        grid-template-columns: 1fr;
     }
 
     .home-featured-card {

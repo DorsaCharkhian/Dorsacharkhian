@@ -1087,8 +1087,7 @@ section {
 }
 
 .about-process .home-featured-card {
-    aspect-ratio: 1;
-    overflow-y: auto;
+    min-height: 240px;
 }
 
 .about-process .home-featured-card p {

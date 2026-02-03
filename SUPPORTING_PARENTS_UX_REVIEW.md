@@ -11,7 +11,7 @@
 ### Hero
 - **Current:** Title, subtitle, meta, one intro sentence. No at-a-glance outcome.
 - **Recommendation:**
-  - Add a **Hero summary / Outcomes at a glance** block immediately after the intro, clearly labeled as **“Outcomes (conceptual)”** so recruiters see impact in 5 seconds. Use 2–3 short lines (e.g. improved confidence, reduced uncertainty, trust-centered design) — no invented metrics.
+  - Add a **Hero summary / Outcomes at a glance** block immediately after the intro, clearly labeled as **“Outcomes (conceptual)”** so recruiters see impact in 5 seconds. Use 2–3 short lines (e.g. improved confidence, reduced uncertainty, trust-centered design)  - no invented metrics.
   - Keep line length under ~65ch for readability; ensure `case-study-intro` has adequate margin-bottom before the outcomes block.
 - **Accessibility:** Ensure meta line (UX Researcher & Designer · Team Project) has sufficient contrast (e.g. #4a5568 on white). Subtitle and intro should meet WCAG AA (4.5:1 for body text).
 
@@ -21,11 +21,11 @@
 
 ### My Role & Responsibilities
 - **Current:** “As a UX Researcher & Designer on a cross-functional team, I contributed to:” + 5 bullets.
-- **Recommendation:** Keep structure. Ensure bullets are visually distinct (bullet color, spacing). Consider slightly larger `line-height` (1.7–1.8) for list items to reduce density. No leadership claims — wording is already appropriate.
+- **Recommendation:** Keep structure. Ensure bullets are visually distinct (bullet color, spacing). Consider slightly larger `line-height` (1.7–1.8) for list items to reduce density. No leadership claims  - wording is already appropriate.
 
 ### Research & Methods
 - **Current:** 4 method bullets + Key insight in accent color.
-- **Recommendation:** Keep. The purple Key insight line is good for scan — recruiters see “what we learned” quickly. Ensure that line is the only colored block in the section so hierarchy is clear.
+- **Recommendation:** Keep. The purple Key insight line is good for scan  - recruiters see “what we learned” quickly. Ensure that line is the only colored block in the section so hierarchy is clear.
 
 ### Design Concepts (Team Prototypes)
 - **Current:** Short intro + 3 concepts + closing line.
@@ -45,7 +45,7 @@
 
 ### Impact (Conceptual Outcomes)
 - **Current:** 4 bullets + academic disclaimer.
-- **Recommendation:** Keep. The disclaimer (“Academic concept project — outcomes based on qualitative synthesis, not deployed metrics”) is ethically correct. Optionally add a small “Conceptual” label above the list (e.g. uppercase, 0.75rem) so recruiters never mistake these for shipped metrics.
+- **Recommendation:** Keep. The disclaimer (“Academic concept project  - outcomes based on qualitative synthesis, not deployed metrics”) is ethically correct. Optionally add a small “Conceptual” label above the list (e.g. uppercase, 0.75rem) so recruiters never mistake these for shipped metrics.
 
 ### Key Takeaway
 - **Current:** One sentence in a highlighted block.
@@ -75,7 +75,7 @@
         - Improved perceived decision confidence for parents
         - Reduced uncertainty in non-emergency childcare situations
         - Trust-centered design, accessibility, healthcare UX
-        Label: "Outcomes (conceptual — academic project)"
+        Label: "Outcomes (conceptual  - academic project)"
 ---
 [CONTENT - single column, max-width ~720–800px]
   Problem (2 sentences)
@@ -105,10 +105,10 @@
 
 | Group              | Count | Layout        | Images (suggested) | Purpose |
 |-------------------|-------|---------------|---------------------|---------|
-| Research & process| 1     | Single-focus  | 2.jpg               | Journey/trust mapping — where trust broke down |
+| Research & process| 1     | Single-focus  | 2.jpg               | Journey/trust mapping  - where trust broke down |
 | Concept & synthesis| 2    | 2-col grid    | 5.jpg, 7.jpg        | Synthesis and concept direction |
 | Prototype & outcome| 2    | Single or grid| 8.jpg, 12.jpg       | Prototype/flow + outcome/presentation |
-| **Total**         | **5** | —             | 2, 5, 7, 8, 12      | — |
+| **Total**         | **5** |  -             | 2, 5, 7, 8, 12      |  - |
 
 - **Remove/deprioritize:** Any of 3, 4, 6, 9, 10, 11, 13 if they add visual noise or duplicate the same insight. Prefer images that are diagrams/sketches over dense text slides.
 - **Full-width vs grid:** Process and “hero” prototype image can be full-width (max-width ~720px). Concept and second prototype can be in a 2-col grid for rhythm.
@@ -121,13 +121,13 @@
 - **Title:** Caregiver journey and trust mapping  
 - **What this shows:** Research artifacts from parent interviews and journey mapping.  
 - **Why it mattered:** Surfaced where trust broke down and where clarity was missing.  
-- **Insight it supports:** “Parents need credible, human-supported guidance — not more fragmented information.”  
+- **Insight it supports:** “Parents need credible, human-supported guidance  - not more fragmented information.”  
 
 **Image 5 (Concept & synthesis)**  
 - **Title:** Synthesis and concept direction  
 - **What this shows:** Thematic synthesis and early service concept framing.  
 - **Why it mattered:** Aligned the team on trust-centered, human-supported care.  
-- **Insight it supports:** “Professional guidance beat online sources for confidence — so concepts centered on access to people, not just content.”  
+- **Insight it supports:** “Professional guidance beat online sources for confidence  - so concepts centered on access to people, not just content.”  
 
 **Image 7 (Concept & synthesis)**  
 - **Title:** Service concept or empathy mapping  
@@ -157,8 +157,8 @@
   - H2 (section titles): clear, consistent size (e.g. 1.5–1.75rem), bottom border or weight.  
   - Body: 1rem–1.1rem, line-height 1.7–1.8.  
   - Captions: 0.875rem, muted color (#6b7280), sufficient contrast.
-- **Contrast:** Ensure body text and captions meet WCAG AA (4.5:1). Key insight purple (#667eea) on white — verify contrast; if needed, darken slightly (#5a67d8) or use on a very light tint.
-- **Spacing:** Section margin-bottom 2.5–3.5rem; space between figures 1.5–2rem. Avoid long walls of text — break with sub-headings in Project Visuals.
+- **Contrast:** Ensure body text and captions meet WCAG AA (4.5:1). Key insight purple (#667eea) on white  - verify contrast; if needed, darken slightly (#5a67d8) or use on a very light tint.
+- **Spacing:** Section margin-bottom 2.5–3.5rem; space between figures 1.5–2rem. Avoid long walls of text  - break with sub-headings in Project Visuals.
 - **No text in images:** Do not rely on image text for key messages; always duplicate in caption or body.
 
 ---
@@ -166,7 +166,7 @@
 ## 6. Recruiter scan optimization (30–60 seconds)
 
 - **Immediate (first 5 sec):** Title + “Team Project” + one-line intro.  
-- **Next (10 sec):** “Outcomes at a glance (conceptual)” in the hero — 2–3 bullets.  
+- **Next (10 sec):** “Outcomes at a glance (conceptual)” in the hero  - 2–3 bullets.  
 - **Next (20 sec):** Problem (1 line) + Role (first 2 bullets) + Key insight (purple line).  
 - **Next (20 sec):** Design Concepts (3 one-liners) + 5 images with short captions that answer “What insight does this support?”  
 - **Close (5 sec):** Impact (conceptual) + Key Takeaway + Tools + Video fallback.

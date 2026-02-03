@@ -15,7 +15,7 @@ git add -A
 echo ""
 echo "💾 Committing changes..."
 if git diff --staged --quiet 2>/dev/null; then
-  echo "⚠️  No changes staged — nothing to commit. (Add files first.)"
+  echo "⚠️  No changes staged  - nothing to commit. (Add files first.)"
 else
   git commit -m "Update portfolio: content and assets"
 fi

@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Lightbox: click-to-zoom for case study images (additive only — no HTML/layout changes)
+// Lightbox: click-to-zoom for case study images (additive only  - no HTML/layout changes)
 (function () {
     function initLightbox() {
         const body = document.querySelector('.case-study-body');

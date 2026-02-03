@@ -5,7 +5,7 @@ I standardized the UI design system across all three case studies to ensure visu
 **Changes were limited to shared UI elements:**
 - Spacing (hero, content, sections)
 - Typography (section titles, body text, accent lines)
-- Accent lines (Key insight / Research scope — shared class)
+- Accent lines (Key insight / Research scope  - shared class)
 - Section styling (Impact grid, Key Takeaway, figures, captions)
 - Reusable CSS classes (e.g. `case-study-text-accent`, `case-study-lead-in`, `case-study-tools`)
 

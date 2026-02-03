@@ -65,7 +65,7 @@ body, p {
     padding: 0 20px;
 }
 
-/* Navigation — modern, minimal, content-first (2026-ready) */
+/* Navigation  - modern, minimal, content-first (2026-ready) */
 .navbar {
     position: fixed;
     top: 0;
@@ -137,7 +137,7 @@ body, p {
     width: 100%;
 }
 
-/* Icon links — same color system, equal padding and tap target */
+/* Icon links  - same color system, equal padding and tap target */
 .nav-icon .nav-link {
     font-size: 1.1rem;
     padding: 0.5rem 0.6rem;
@@ -173,7 +173,7 @@ body, p {
     transition: 0.3s;
 }
 
-/* Hero Section — soft bluish-purple palette (~20–25% reduced height/padding) */
+/* Hero Section  - soft bluish-purple palette (~20–25% reduced height/padding) */
 .hero {
     min-height: 64vh;
     display: flex;
@@ -318,7 +318,7 @@ body, p {
     margin-right: auto;
 }
 
-/* Home — Featured Case Studies: two decision-focused cards */
+/* Home  - Featured Case Studies: two decision-focused cards */
 .home-featured {
     padding: 2rem 0;
     background: #f8fafc;
@@ -390,7 +390,7 @@ body, p {
     text-decoration: underline;
 }
 
-/* Home — Research Expertise: informational, grouped categories */
+/* Home  - Research Expertise: informational, grouped categories */
 .research-signature {
     padding: 2rem 0;
     background: #fff;
@@ -680,7 +680,7 @@ body, p {
     text-decoration: underline;
 }
 
-/* Buttons — unified radius and hover (design system) */
+/* Buttons  - unified radius and hover (design system) */
 .btn {
     padding: 12px 24px;
     border-radius: 8px;
@@ -796,7 +796,7 @@ body, p {
     object-fit: cover;
     object-position: center 20%;
 }
-/* Artifact #1 — UX Methode: left side, a bit more left, smaller “supporting evidence” size, slight overlay, motion */
+/* Artifact #1  - UX Methode: left side, a bit more left, smaller “supporting evidence” size, slight overlay, motion */
 .hero-image-card--bg1 {
     position: absolute;
     top: 50%;
@@ -825,7 +825,7 @@ body, p {
     object-position: center;
     filter: none;
 }
-/* Artifact #2 — Pandora: behind portrait, higher, smaller “supporting evidence” size, slight overlay, motion */
+/* Artifact #2  - Pandora: behind portrait, higher, smaller “supporting evidence” size, slight overlay, motion */
 .hero-image-card--bg2 {
     position: absolute;
     top: 22%;
@@ -1004,7 +1004,7 @@ section {
     transform: translateY(-1px);
 }
 
-/* About Section — single-column editorial layout, calm and readable */
+/* About Section  - single-column editorial layout, calm and readable */
 .about {
     background: white;
     padding: 2rem 0 4rem;
@@ -1049,7 +1049,7 @@ section {
     margin-bottom: 0;
 }
 
-/* Belief statement — subtle emphasis, no heavy border */
+/* Belief statement  - subtle emphasis, no heavy border */
 .about-body p.about-belief {
     margin-top: 2rem;
     margin-bottom: 0;
@@ -1057,7 +1057,7 @@ section {
     border-left: 3px solid #667eea;
 }
 
-/* My Process — card-based; matches .home-featured visual style */
+/* My Process  - card-based; matches .home-featured visual style */
 .about-process {
     margin-top: 3rem;
     padding: 2rem 1.5rem;
@@ -1166,7 +1166,7 @@ section {
     font-weight: 500;
 }
 
-/* Core research domains — brief, factual (senior UXR alignment) */
+/* Core research domains  - brief, factual (senior UXR alignment) */
 .about-domains {
     margin-top: 1rem;
     margin-bottom: 1.25rem;
@@ -1211,7 +1211,7 @@ section {
     font-weight: 700;
 }
 
-/* Core Competencies — editorial, not tag-heavy (aligned with case study outcomes block) */
+/* Core Competencies  - editorial, not tag-heavy (aligned with case study outcomes block) */
 .core-competencies {
     margin-top: 0;
     margin-bottom: 0;
@@ -1265,7 +1265,7 @@ section {
     align-items: flex-start;
 }
 
-/* Portrait — supporting element: neutral, no card/shadow, subtle crop for face */
+/* Portrait  - supporting element: neutral, no card/shadow, subtle crop for face */
 .profile-photo {
     width: 240px;
     height: 240px;
@@ -1576,7 +1576,7 @@ section {
     border-color: white;
 }
 
-/* Projects / Case Studies — 2026-ready: soft section bg, white cards, minimal depth */
+/* Projects / Case Studies  - 2026-ready: soft section bg, white cards, minimal depth */
 .projects {
     background: #F6F7FB;
 }
@@ -1948,7 +1948,7 @@ section {
     color: #764ba2;
 }
 
-/* Research & Publications — ONLY for Research page; 2026-ready: cards, timeline, soft bg */
+/* Research & Publications  - ONLY for Research page; 2026-ready: cards, timeline, soft bg */
 .research {
     background: #F6F7FB;
     padding: 2rem 0 4rem;
@@ -1990,7 +1990,7 @@ section {
     font-weight: 600;
 }
 
-/* Key roles grid — 2026: prominent, editorial, date + title hierarchy */
+/* Key roles grid  - 2026: prominent, editorial, date + title hierarchy */
 .research .research-roles-section {
     margin-bottom: 2rem;
 }
@@ -2445,7 +2445,7 @@ section {
     color: inherit;
 }
 
-/* Teaching & Industry Relevance — concise, professional */
+/* Teaching & Industry Relevance  - concise, professional */
 .teaching-industry-section {
     margin-top: 2.5rem;
     padding: 1.5rem 0 0;
@@ -2468,7 +2468,7 @@ section {
     max-width: 65ch;
 }
 
-/* Selected Student Work — sample case studies from Pratt IXD */
+/* Selected Student Work  - sample case studies from Pratt IXD */
 .student-work-section {
     margin-top: 2rem;
 }
@@ -2897,7 +2897,7 @@ section {
     min-height: 120px;
 }
 
-/* Footer — thin, faint glass (2026), readable text */
+/* Footer  - thin, faint glass (2026), readable text */
 .footer {
     background: rgba(45, 55, 72, 0.85);
     backdrop-filter: blur(10px);
@@ -3019,7 +3019,7 @@ section {
     font-weight: 400;
 }
 
-/* Hero: Outcomes at a glance (conceptual) — recruiter scan */
+/* Hero: Outcomes at a glance (conceptual)  - recruiter scan */
 .case-study-hero-outcomes {
     margin-top: 1.5rem;
     padding: 1.25rem 1.5rem;
@@ -3092,7 +3092,7 @@ section {
     line-height: 1.6;
 }
 
-/* TL;DR Research Snapshot — case study top summary */
+/* TL;DR Research Snapshot  - case study top summary */
 .case-study-snapshot {
     margin-bottom: 3.5rem;
     padding: 1.75rem 2rem;
@@ -3178,7 +3178,7 @@ section {
     margin-bottom: 0;
 }
 
-/* Shared accent line (Key insight / Research scope) — same on all case studies */
+/* Shared accent line (Key insight / Research scope)  - same on all case studies */
 .case-study-text-accent {
     margin-top: 1rem;
     font-size: 0.95rem;
@@ -3186,7 +3186,7 @@ section {
     font-weight: 500;
 }
 
-/* Lead-in paragraph before a list — same spacing on all case studies */
+/* Lead-in paragraph before a list  - same spacing on all case studies */
 .case-study-lead-in {
     margin-bottom: 0.75rem;
 }
@@ -3268,7 +3268,7 @@ section {
     position: relative;
 }
 
-/* 16:9 aspect wrapper for embedded video (e.g. Canva iframe) — matches Drexel/VR rhythm */
+/* 16:9 aspect wrapper for embedded video (e.g. Canva iframe)  - matches Drexel/VR rhythm */
 .video-container-aspect {
     padding-bottom: 56.25%;
     height: 0;
@@ -4141,7 +4141,7 @@ section {
     margin: 0 auto;
 }
 
-/* Tools section with icons — case study page */
+/* Tools section with icons  - case study page */
 .case-study-tools-text {
     font-size: 0.95rem;
     color: #4a5568;
@@ -4266,7 +4266,7 @@ section {
 
 /* ========== Additive utilities: lightbox + video-responsive (do not alter existing layout) ========== */
 
-/* Lightbox — click-to-zoom overlay; default state unchanged for images */
+/* Lightbox  - click-to-zoom overlay; default state unchanged for images */
 .lightbox {
     position: fixed;
     inset: 0;

@@ -356,8 +356,8 @@ body, p {
 }
 
 .home-featured-card:hover {
-    border-color: rgba(102, 126, 234, 0.4);
-    box-shadow: 0 2px 12px rgba(102, 126, 234, 0.08);
+    border-color: rgba(184, 120, 106, 0.35);
+    box-shadow: 0 2px 12px rgba(184, 120, 106, 0.08);
 }
 
 .home-featured-card-title {
@@ -1064,21 +1064,22 @@ section {
     margin-top: 2.25rem;
     margin-bottom: 0;
     padding-left: 1rem;
-    border-left: 3px solid #667eea;
+    border-left: 3px solid #c9a088;
 }
 
 /* Currently curious about section */
 .about-curious {
     margin-top: 2rem;
     padding: 1.25rem 1.5rem;
-    background: linear-gradient(135deg, #f8f7ff 0%, #f0f4ff 100%);
+    background: linear-gradient(135deg, #faf8f6 0%, #f7f4f1 100%);
     border-radius: 12px;
+    border-left: 3px solid #c9a088;
 }
 
 .about-curious-label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #667eea;
+    color: #b8786a;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 0.5rem;
@@ -1676,8 +1677,8 @@ section {
 }
 
 .case-study-card:hover {
-    border-color: rgba(0, 0, 0, 0.08);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border-color: rgba(184, 120, 106, 0.25);
+    box-shadow: 0 2px 8px rgba(184, 120, 106, 0.06);
 }
 
 .case-study-icon {

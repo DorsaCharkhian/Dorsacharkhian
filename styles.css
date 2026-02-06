@@ -3624,8 +3624,11 @@ section {
         padding: 0 1rem;
     }
 
-    .hero-visual {
-        display: none;
+    /* Keep hero visual visible on home page */
+    .page-home .hero-visual {
+        display: flex;
+        width: 100%;
+        justify-content: center;
     }
 
     .expertise-tags {
@@ -4694,5 +4697,339 @@ section {
     
     .about-container {
         max-width: 860px;
+    }
+}
+
+/* ===== COMPREHENSIVE MOBILE & TABLET RESPONSIVE FIXES ===== */
+
+/* Tablet portrait to landscape (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .container {
+        max-width: 720px;
+        padding: 0 1.5rem;
+    }
+    
+    .nav-container {
+        max-width: 720px;
+        padding: 0 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2.25rem;
+    }
+    
+    h2 {
+        font-size: 1.875rem;
+    }
+    
+    .hero {
+        min-height: 70vh;
+        padding: 2rem 0;
+    }
+    
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-content {
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero-tagline {
+        font-size: 1.75rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .page-home .hero-visual {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .page-home .hero-image-stack {
+        min-height: 320px;
+    }
+    
+    .page-home .hero-image-card--portrait {
+        width: 240px;
+    }
+    
+    .page-home .hero-image-card--bg1,
+    .page-home .hero-image-card--bg2 {
+        width: 180px;
+    }
+    
+    .about-container {
+        max-width: 600px;
+        padding: 0 1.5rem;
+    }
+    
+    .about-process-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .case-studies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    
+    .research .research-roles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .impact-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small phones (max-width: 400px) */
+@media (max-width: 400px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .nav-container {
+        padding: 0 0.75rem;
+        height: 56px;
+    }
+    
+    .nav-logo .logo-text {
+        font-size: 1rem;
+    }
+    
+    .hero {
+        margin-top: 56px;
+        padding: 1rem 0;
+    }
+    
+    .hero-content {
+        padding: 0 0.5rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.1rem;
+        line-height: 1.35;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .hero-buttons .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+    
+    .page-home .hero-image-stack {
+        min-height: 220px;
+        padding: 1rem;
+    }
+    
+    .page-home .hero-image-card--portrait {
+        width: min(180px, 50vw);
+    }
+    
+    .page-home .hero-image-card--bg1,
+    .page-home .hero-image-card--bg2 {
+        width: min(130px, 36vw);
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .about-container {
+        padding: 0 0.75rem;
+    }
+    
+    .about-process-cards {
+        gap: 0.75rem;
+    }
+    
+    .home-featured-card {
+        padding: 1rem;
+    }
+    
+    .home-featured-card-title {
+        font-size: 0.95rem;
+    }
+    
+    .home-featured-card p {
+        font-size: 0.875rem;
+    }
+    
+    .case-study-card {
+        padding: 1rem 0.75rem;
+    }
+    
+    .case-study-card-title {
+        font-size: 1.1rem;
+    }
+    
+    .case-study-description {
+        font-size: 0.875rem;
+    }
+    
+    .case-study-title {
+        font-size: 1.5rem;
+    }
+    
+    .case-study-subtitle {
+        font-size: 1rem;
+    }
+    
+    .case-study-section-title {
+        font-size: 1.25rem;
+    }
+    
+    .case-study-text {
+        font-size: 0.9rem;
+    }
+    
+    .impact-number {
+        font-size: 1rem;
+    }
+    
+    .impact-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Very small phones (max-width: 360px) */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .nav-container {
+        padding: 0 0.5rem;
+    }
+    
+    .nav-logo .logo-text {
+        font-size: 0.9rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+    }
+    
+    .hero-buttons {
+        gap: 0.75rem;
+    }
+    
+    .hero-buttons .btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.8rem;
+        max-width: 240px;
+    }
+    
+    .page-home .hero-image-stack {
+        min-height: 200px;
+    }
+    
+    .page-home .hero-image-card--portrait {
+        width: min(160px, 48vw);
+    }
+    
+    .page-home .hero-image-card--bg1,
+    .page-home .hero-image-card--bg2 {
+        width: min(110px, 32vw);
+    }
+    
+    .section-header {
+        padding: 0 0.25rem;
+    }
+    
+    .case-study-body {
+        padding: 0 0.5rem;
+    }
+    
+    .case-study-intro {
+        padding: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Fix hero visual on mobile - ensure it shows */
+@media (max-width: 768px) {
+    .page-home .hero-visual {
+        display: flex !important;
+        width: 100%;
+        justify-content: center;
+        padding: 0 0.5rem;
+    }
+    
+    .hero-visual {
+        display: flex !important;
+    }
+}
+
+/* Landscape phones */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 1rem 0 1.5rem;
+    }
+    
+    .page-home .hero-container {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    
+    .page-home .hero-content {
+        flex: 1;
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    .page-home .hero-visual {
+        flex: 1;
+        max-width: 45%;
+    }
+    
+    .page-home .hero-image-stack {
+        min-height: 200px;
+    }
+    
+    .page-home .hero-image-card--portrait {
+        width: min(140px, 30vw);
+    }
+    
+    .page-home .hero-image-card--bg1,
+    .page-home .hero-image-card--bg2 {
+        width: min(100px, 22vw);
     }
 }

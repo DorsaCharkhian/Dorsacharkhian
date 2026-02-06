@@ -74,7 +74,7 @@ body, p {
     top: 0;
     width: 100%;
     background: #fcfbfa;
-    border-bottom: 2px solid #b5453a;
+    border-bottom: 1.5px solid #b5453a;
     z-index: 1000;
     transition: border-color 0.2s ease;
 }
@@ -86,8 +86,8 @@ body, p {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #9a3a30 0%, #b5453a 50%, #9a3a30 100%);
+    height: 1.5px;
+    background: #b5453a;
 }
 
 .nav-container {

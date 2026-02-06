@@ -79,6 +79,17 @@ body, p {
     transition: border-color 0.2s ease;
 }
 
+/* Persian blue accent line at top */
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1a4b8c 0%, #2d6cb5 50%, #1a4b8c 100%);
+}
+
 .nav-container {
     width: 100%;
     max-width: 1200px;

@@ -484,15 +484,17 @@ body, p {
 .page-home {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 .page-home .footer {
     margin-top: auto;
 }
 /* Hero: ~90vh desktop, generous spacing, max text width 520–560px */
 .page-home .hero {
-    min-height: 90vh;
-    padding: 2.5rem 0 2rem;
+    flex: 1;
+    min-height: 0;
+    padding: 1.5rem 0 1rem;
     display: flex;
     align-items: center;
 }
@@ -3561,8 +3563,9 @@ section {
     }
 
     .page-home .hero {
-        min-height: auto;
-        padding: 1.5rem 0 2rem;
+        flex: 1;
+        min-height: 0;
+        padding: 1rem 0;
     }
     .page-home .hero-container {
         gap: 2rem;

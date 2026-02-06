@@ -74,7 +74,7 @@ body, p {
     top: 0;
     width: 100%;
     background: #fcfbfa;
-    border-bottom: 1px solid #eceae6;
+    border-bottom: 2px solid #b5453a;
     z-index: 1000;
     transition: border-color 0.2s ease;
 }

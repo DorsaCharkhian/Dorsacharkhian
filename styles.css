@@ -124,7 +124,7 @@ body, p {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1.25rem;
     align-items: center;
 }
 
@@ -132,9 +132,10 @@ body, p {
     text-decoration: none;
     color: #2d3748;
     font-weight: 500;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     transition: color 0.2s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-link:hover {

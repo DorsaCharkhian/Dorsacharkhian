@@ -486,6 +486,7 @@ body, p {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 }
 .page-home .footer {
@@ -547,6 +548,8 @@ body, p {
     align-items: center;
     justify-content: center;
     animation: none;
+    overflow: hidden;
+    max-height: 100%;
 }
 
 @media (min-width: 1024px) {
@@ -568,7 +571,7 @@ body, p {
         position: relative;
         width: 100%;
         height: 100%;
-        overflow: visible;
+        overflow: hidden;
     }
 }
 /* Clear separation: Hero vs Research Signature (distinct section) */
@@ -784,10 +787,10 @@ body, p {
 .hero-image-stack {
     position: relative;
     width: 100%;
-    min-height: 380px;
+    min-height: 0;
     margin: 0 auto;
     padding: 2rem;
-    overflow: visible;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3604,12 +3607,13 @@ section {
         box-sizing: border-box;
     }
     .page-home .hero-image-stack {
-        min-height: 280px;
-        padding: 1.25rem;
+        min-height: 0;
+        padding: 1rem;
         width: 100%;
         max-width: 100vw;
         justify-content: center;
         margin-left: 0;
+        overflow: hidden;
     }
     .page-home .hero-image-card--portrait {
         width: min(220px, 56vw);
@@ -4838,7 +4842,7 @@ section {
     }
     
     .page-home .hero-image-stack {
-        min-height: 320px;
+        min-height: 0;
     }
     
     .page-home .hero-image-card--portrait {
@@ -4918,7 +4922,7 @@ section {
     }
     
     .page-home .hero-image-stack {
-        min-height: 220px;
+        min-height: 0;
         padding: 1rem;
     }
     
@@ -5033,7 +5037,7 @@ section {
     }
     
     .page-home .hero-image-stack {
-        min-height: 200px;
+        min-height: 0;
     }
     
     .page-home .hero-image-card--portrait {

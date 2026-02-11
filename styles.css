@@ -19,7 +19,7 @@ body {
     font-weight: 400;
     min-height: 100%;
     /* Very subtle warm paper background */
-    background-color: #fcfbfa;
+    background-color: #f2dbbd;
     position: relative;
 }
 
@@ -77,7 +77,7 @@ body, p {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #fcfbfa;
+    background: #f2dbbd;
     border-bottom: 1.5px solid #b5453a;
     z-index: 1000;
     transition: border-color 0.2s ease;

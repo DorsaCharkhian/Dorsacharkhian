@@ -1913,6 +1913,28 @@ section {
     background: var(--gradient-brand);
 }
 
+/* AI product research card modifier - only applied to projects that are genuinely AI products */
+.case-study-card--ai::before {
+    background: var(--gradient-brand-ai);
+}
+
+.case-study-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ai-accent);
+    background: rgba(var(--ai-accent-rgb), 0.08);
+    border: 1px solid rgba(var(--ai-accent-rgb), 0.2);
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius-pill);
+    margin-bottom: 0.85rem;
+    align-self: flex-start;
+}
+
 .case-study-card:hover {
     border-color: rgba(184, 120, 106, 0.25);
     box-shadow: var(--shadow-lg);

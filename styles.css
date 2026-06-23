@@ -301,7 +301,7 @@ body, p {
 
 /* Hero Section - warm terracotta palette (~20–25% reduced height/padding) */
 .hero {
-    min-height: 64vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     background: transparent;
@@ -309,7 +309,7 @@ body, p {
     z-index: 1;
     overflow-x: hidden;
     overflow-y: visible;
-    padding: 1.5rem 0;
+    padding: 2.5rem 0;
     margin-top: 64px;
 }
 
@@ -332,7 +332,7 @@ body, p {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     position: relative;
     z-index: 1;
     min-height: auto;
@@ -910,7 +910,7 @@ body, p {
 .hero-image-stack {
     position: relative;
     width: 100%;
-    min-height: 380px;
+    min-height: 420px;
     margin: 0 auto;
     padding: 2rem;
     overflow: visible;
@@ -935,9 +935,10 @@ body, p {
 .hero-image-card--portrait {
     position: relative;
     z-index: 3;
-    width: clamp(250px, 28vw, 300px);
+    width: clamp(270px, 30vw, 330px);
     aspect-ratio: 3 / 4;
     border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
     transform: none;
     filter: none;
     margin-left: 0;

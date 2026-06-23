@@ -39,7 +39,7 @@
     --radius-pill: 999px;
 
     /* Elevation (shadow) scale - brand-tinted, not generic black/purple */
-    --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow-xs: var(--shadow-xs);
     --shadow-sm: 0 2px 8px rgba(var(--color-brand-rgb), 0.08);
     --shadow-md: 0 4px 16px rgba(var(--color-brand-rgb), 0.10);
     --shadow-lg: 0 12px 32px rgba(var(--color-brand-rgb), 0.14);
@@ -219,7 +219,7 @@ body, p {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     color: #2d3748;
 }
 
@@ -414,7 +414,7 @@ body, p {
 .home-featured-card {
     background: #ffffff;
     border: 1px solid #e9e7e3;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -674,7 +674,7 @@ body, p {
     position: relative;
     width: 250px;
     aspect-ratio: 4 / 3;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     overflow: hidden;
     background: #f1f5f9;
 }
@@ -760,7 +760,7 @@ body, p {
 /* Buttons  - unified radius and hover (design system) */
 .btn {
     padding: 12px 24px;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9375rem;
@@ -816,7 +816,7 @@ body, p {
     width: 360px;
     height: 360px;
     max-width: 100%;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     border: 4px solid white;
@@ -864,7 +864,7 @@ body, p {
     z-index: 3;
     width: clamp(250px, 28vw, 300px);
     aspect-ratio: 3 / 4;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     transform: none;
     filter: none;
     margin-left: 0;
@@ -884,7 +884,7 @@ body, p {
     width: clamp(200px, 22vw, 260px);
     opacity: 1;
     filter: none;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     animation: heroBgFloat 14s ease-in-out infinite alternate;
     animation-delay: 0s;
 }
@@ -952,7 +952,7 @@ body, p {
     background: #f8f9fa;
     color: #4a5568;
     padding: 0.4rem 0.8rem;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     font-size: 0.85rem;
     font-weight: 500;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -1142,7 +1142,7 @@ section {
     margin-top: 2rem;
     padding: 1.25rem 1.5rem;
     background: #f9f8f6;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     border-left: 3px solid #c9a088;
 }
 
@@ -1216,7 +1216,7 @@ section {
     flex-direction: column;
     min-height: 240px;
     padding: 1.5rem;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-sizing: border-box;
 }
 
@@ -1414,7 +1414,7 @@ section {
     width: 300px;
     height: 300px;
     background: linear-gradient(135deg, #faf6f4 0%, #f5ebe8 100%);
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1619,7 +1619,7 @@ section {
 .honor-card {
     background: #f8fafc;
     border: 1px solid rgba(var(--color-brand-rgb), 0.15);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     padding: 1rem;
     display: flex;
     align-items: flex-start;
@@ -1641,7 +1641,7 @@ section {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #b5453a 0%, #c96b5f 100%);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     color: white;
     font-size: 1.1rem;
 }
@@ -1691,7 +1691,7 @@ section {
     text-align: center;
     padding: 2rem;
     background: linear-gradient(135deg, #b5453a 0%, #c96b5f 100%);
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
 }
 
 .resume-download .btn {
@@ -1737,7 +1737,7 @@ section {
 
 .case-study-card {
     background: #ffffff;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: none;
@@ -1795,7 +1795,7 @@ section {
     color: #b5453a;
     background: #faf6f4;
     padding: 0.25rem 0.75rem;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
 }
 
 .case-study-description {
@@ -1826,7 +1826,7 @@ section {
     color: #b5453a;
     background: #faf6f4;
     padding: 0.3rem 0.7rem;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     border: 1px solid #d4a49c;
 }
 
@@ -1891,7 +1891,7 @@ section {
 
 .selected-work-card {
     background: white;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
@@ -2000,7 +2000,7 @@ section {
 
 .project-card {
     background: white;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -2092,10 +2092,10 @@ section {
 
 .research .research-card {
     background: #ffffff;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-xs);
     margin-bottom: 1.5rem;
 }
 
@@ -2150,7 +2150,7 @@ section {
     padding: 1.5rem 1.5rem;
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-left: 3px solid #b5453a;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-xs);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
@@ -2282,7 +2282,7 @@ section {
     padding: 12px 20px;
     background: #ffffff;
     border: 1px solid #d4a49c;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     color: #b5453a;
     text-decoration: none;
     font-weight: 600;
@@ -2356,7 +2356,7 @@ section {
     margin-left: -1.5rem;
     padding-left: 2rem;
     background: #ffffff;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -2442,7 +2442,7 @@ section {
 
 .position-card {
     background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: 1.5rem;
     border: 2px solid #e2e8f0;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -2566,7 +2566,7 @@ section {
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     font-weight: 500;
 }
 
@@ -2632,10 +2632,10 @@ section {
     gap: 0.35rem;
     padding: 1.25rem 1.25rem;
     background: #ffffff;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-left: 3px solid #b5453a;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-xs);
     text-decoration: none;
     color: inherit;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -2997,7 +2997,7 @@ section {
 .contact-form {
     background: white;
     padding: 2rem;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -3206,7 +3206,7 @@ section {
     width: 100%;
     max-width: 800px;
     height: auto;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     display: block;
     margin: 0 auto;
@@ -3229,7 +3229,7 @@ section {
     padding: 1.75rem 2rem;
     background: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     border-left: 4px solid #b5453a;
 }
 
@@ -3381,7 +3381,7 @@ section {
 .case-study-takeaway {
     background: linear-gradient(135deg, #faf6f4 0%, #f5ebe8 100%);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     border-left: 4px solid #b5453a;
 }
 
@@ -3404,7 +3404,7 @@ section {
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     background: #0f0f0f;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
@@ -3954,7 +3954,7 @@ section {
     }
 
     .case-study-image img {
-        border-radius: 8px;
+        border-radius: var(--radius-sm);
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     }
 
@@ -4055,7 +4055,7 @@ section {
     }
 
     .case-study-video {
-        border-radius: 8px;
+        border-radius: var(--radius-sm);
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         max-width: 100%;
         height: auto;
@@ -4257,7 +4257,7 @@ section {
     max-width: 720px;
     height: auto;
     margin: 0 auto 0.75rem;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
@@ -4398,7 +4398,7 @@ section {
     max-width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -4460,7 +4460,7 @@ section {
         gap: 1rem;
         padding: 1.5rem;
         background: #f8fafc;
-        border-radius: 12px;
+        border-radius: var(--radius-md);
         margin-top: 1rem;
         text-align: center;
     }
@@ -4478,7 +4478,7 @@ section {
         color: #fff;
         font-weight: 600;
         text-decoration: none;
-        border-radius: 8px;
+        border-radius: var(--radius-sm);
         font-size: 1rem;
         transition: background 0.2s ease;
     }

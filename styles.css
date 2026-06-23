@@ -65,6 +65,58 @@ html {
     min-height: 100%;
 }
 
+/* ============================================================
+   Accessibility
+   ============================================================ */
+
+/* Respect users who've asked the OS for less motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Keyboard-only focus ring in brand color. Mouse/touch clicks don't trigger
+   :focus-visible, so this never adds a ring to a clicked button/link. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* Visually-hidden until focused: lets keyboard users jump straight past the
+   repeated nav on every page. */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-brand);
+    color: #ffffff;
+    padding: 0.6rem 1rem;
+    z-index: 2000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0 0 var(--radius-sm) 0;
+    transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;

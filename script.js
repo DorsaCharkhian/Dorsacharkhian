@@ -198,55 +198,6 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
-// Add click effects to buttons
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        // Create ripple effect
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple');
-        
-        this.appendChild(ripple);
-        
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    });
-});
-
-// Add CSS for ripple effect
-const style = document.createElement('style');
-style.textContent = `
-    .btn {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: ripple-animation 0.6s linear;
-        pointer-events: none;
-    }
-    
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
-
 // Add loading animation - DISABLED for instant display
 window.addEventListener('load', () => {
     // No delay - content shows immediately
@@ -286,17 +237,9 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Add focus indicators for accessibility
-document.querySelectorAll('a, button, input, textarea').forEach(element => {
-    element.addEventListener('focus', () => {
-        element.style.outline = '2px solid #667eea';
-        element.style.outlineOffset = '2px';
-    });
-    
-    element.addEventListener('blur', () => {
-        element.style.outline = 'none';
-    });
-});
+// Focus indicators for accessibility are handled in CSS via :focus-visible
+// (see styles.css "Accessibility" block) so they only appear for keyboard
+// users, not on every mouse/touch interaction.
 
 // Align hero description width with title width (resize throttled)
 document.addEventListener('DOMContentLoaded', () => {

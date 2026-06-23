@@ -18,13 +18,8 @@
     --color-brand-rgb: 181, 69, 58;
     --gradient-brand: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
 
-    /* AI accent - used sparingly: hero atmosphere, AI Agents section, AI-related kickers only */
-    --ai-accent: #5b5fef;
-    --ai-accent-2: #2dd4bf;
-    --ai-accent-rgb: 91, 95, 239;
-    --ai-accent-2-rgb: 45, 212, 191;
-    --gradient-ai: linear-gradient(135deg, var(--ai-accent) 0%, var(--ai-accent-2) 100%);
-    --gradient-brand-ai: linear-gradient(135deg, var(--color-brand) 0%, var(--ai-accent) 100%);
+    /* Hairline grid - architectural/editorial direction */
+    --color-hairline: #e3d9c9;
 
     /* Text */
     --color-text: #2d3748;
@@ -307,15 +302,13 @@ body, p {
     transition: 0.3s;
 }
 
-/* Hero Section - warm terracotta palette (~20–25% reduced height/padding) */
+/* Hero Section - architectural minimal: ivory ground, hairline rule, single portrait */
 .hero {
     min-height: 70vh;
     display: flex;
     align-items: center;
-    background:
-        radial-gradient(circle at 16% 20%, rgba(var(--ai-accent-rgb), 0.07), transparent 45%),
-        radial-gradient(circle at 86% 12%, rgba(var(--ai-accent-2-rgb), 0.06), transparent 50%),
-        radial-gradient(circle at 70% 88%, rgba(var(--color-brand-rgb), 0.05), transparent 50%);
+    background: var(--color-surface-warm);
+    border-bottom: 1px solid var(--color-hairline);
     position: relative;
     z-index: 1;
     overflow-x: hidden;
@@ -333,23 +326,6 @@ body, p {
     bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23b5453a" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
     opacity: 0.3;
-}
-
-/* Subtle network/graph pattern - agentic systems visual cue, very low opacity */
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.5;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><g stroke="%235b5fef" stroke-width="1" opacity="0.25"><line x1="40" y1="60" x2="160" y2="120"/><line x1="160" y1="120" x2="130" y2="240"/><line x1="160" y1="120" x2="300" y2="80"/><line x1="300" y1="80" x2="420" y2="150"/><line x1="420" y1="150" x2="560" y2="100"/><line x1="560" y1="100" x2="680" y2="170"/><line x1="130" y1="240" x2="280" y2="290"/><line x1="280" y1="290" x2="450" y2="260"/><line x1="450" y1="260" x2="620" y2="310"/></g><g fill="%232dd4bf" opacity="0.3"><circle cx="40" cy="60" r="2.5"/><circle cx="160" cy="120" r="2.5"/><circle cx="130" cy="240" r="2.5"/><circle cx="300" cy="80" r="2.5"/><circle cx="420" cy="150" r="2.5"/><circle cx="560" cy="100" r="2.5"/><circle cx="680" cy="170" r="2.5"/><circle cx="280" cy="290" r="2.5"/><circle cx="450" cy="260" r="2.5"/><circle cx="620" cy="310" r="2.5"/></g></svg>');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -373,23 +349,16 @@ body, p {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--ai-accent);
-    background: rgba(var(--ai-accent-rgb), 0.08);
-    border: 1px solid rgba(var(--ai-accent-rgb), 0.22);
-    padding: 0.4rem 0.9rem;
-    border-radius: var(--radius-pill);
-    margin: 0 auto 1.25rem;
+    color: var(--color-brand-dark);
+    margin-bottom: 1.5rem;
 }
 
 .gradient-text-ai {
-    background: var(--gradient-ai);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-brand-dark);
     font-weight: 700;
 }
 
@@ -952,22 +921,6 @@ body, p {
     align-items: center;
     justify-content: center;
     flex: 1;
-}
-
-/* Glassmorphism accent panel behind the photo stack */
-.hero-visual::before {
-    content: '';
-    position: absolute;
-    top: 8%;
-    bottom: 8%;
-    left: 6%;
-    right: 6%;
-    border-radius: var(--radius-xl);
-    background: linear-gradient(160deg, rgba(var(--ai-accent-rgb), 0.08), rgba(var(--ai-accent-2-rgb), 0.05));
-    border: 1px solid rgba(var(--ai-accent-rgb), 0.12);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 0;
 }
 
 .hero-photo {
@@ -1913,24 +1866,14 @@ section {
     background: var(--gradient-brand);
 }
 
-/* AI product research card modifier - only applied to projects that are genuinely AI products */
-.case-study-card--ai::before {
-    background: var(--gradient-brand-ai);
-}
-
+/* AI product research kicker - plain text label, no pill/gradient flag (editorial direction) */
 .case-study-kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--ai-accent);
-    background: rgba(var(--ai-accent-rgb), 0.08);
-    border: 1px solid rgba(var(--ai-accent-rgb), 0.2);
-    padding: 0.3rem 0.7rem;
-    border-radius: var(--radius-pill);
+    color: var(--color-brand-dark);
     margin-bottom: 0.85rem;
     align-self: flex-start;
 }
@@ -5338,120 +5281,151 @@ section {
 }
 
 /* ============================================================
-   AI Agents & Applied AI Section (homepage only)
+   Focus Areas Section (homepage only) - AI woven in, architectural minimal
+   Replaces the earlier "AI Agents" marketing-card section: same facts,
+   presented as plain hairline-divided columns instead of icon/gradient cards.
    ============================================================ */
-.ai-agents {
+.focus-areas {
     background: var(--color-surface);
     padding: var(--space-2xl) 0;
-    position: relative;
+    border-top: 1px solid var(--color-hairline);
 }
 
-.ai-agents-label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ai-accent);
-    margin-bottom: 0.5rem;
-}
-
-.ai-agents-triad {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin: 2.5rem 0 3rem;
-}
-
-.ai-agents-card {
-    padding: 1.75rem;
-    border-radius: var(--radius-lg);
-    background: linear-gradient(160deg, rgba(var(--ai-accent-rgb), 0.04), var(--color-surface));
-    border: 1px solid rgba(var(--ai-accent-rgb), 0.14);
-    position: relative;
-    overflow: hidden;
-}
-
-.ai-agents-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-ai);
-}
-
-.ai-agents-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-md);
-    background: rgba(var(--ai-accent-rgb), 0.1);
-    color: var(--ai-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-}
-
-.ai-agents-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
-}
-
-.ai-agents-card p {
-    font-size: 0.92rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin: 0;
-}
-
-.ai-agents-tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    justify-content: center;
+.focus-areas-head {
+    max-width: 720px;
     margin-bottom: 3rem;
 }
 
-.ai-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-pill);
-    font-size: 0.85rem;
-    font-weight: 500;
-    background: rgba(var(--ai-accent-rgb), 0.07);
-    border: 1px solid rgba(var(--ai-accent-rgb), 0.2);
-    color: var(--ai-accent);
-}
-
-.ai-agents-workflow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-}
-
-.ai-workflow-node {
-    padding: 0.75rem 1.25rem;
-    border-radius: var(--radius-md);
-    background: var(--color-surface-warm);
-    font-size: 0.85rem;
+.focus-areas-label {
+    font-size: 0.78rem;
     font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-brand-dark);
+    margin-bottom: 0.75rem;
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--color-hairline);
+}
+
+.focus-card {
+    padding: 2rem 1.75rem;
+    border-right: 1px solid var(--color-hairline);
+}
+
+.focus-card:last-child {
+    border-right: none;
+}
+
+.focus-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
     color: var(--color-text);
+    line-height: 1.35;
 }
 
-.ai-workflow-arrow {
-    color: var(--ai-accent);
-    font-size: 1.1rem;
+.focus-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin: 0;
 }
 
-@media (max-width: 768px) {
-    .ai-agents-triad {
+@media (max-width: 900px) {
+    .focus-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .focus-card:nth-child(2) {
+        border-right: none;
+    }
+    .focus-card:nth-child(3),
+    .focus-card:nth-child(4) {
+        border-top: 1px solid var(--color-hairline);
+    }
+    .focus-card:nth-child(4) {
+        border-right: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .focus-grid {
         grid-template-columns: 1fr;
     }
+    .focus-card {
+        border-right: none !important;
+        border-top: 1px solid var(--color-hairline);
+    }
+    .focus-grid .focus-card:first-child {
+        border-top: none;
+    }
+}
+
+/* ============================================================
+   Hero - architectural minimal: left-aligned editorial copy,
+   single portrait, plain fact grid. Overrides earlier centered
+   layout at every breakpoint (kept as high-specificity additions
+   so existing responsive rules above don't need to be rewritten).
+   ============================================================ */
+body.page-home .hero-content,
+body.page-home .hero-text-wrapper {
+    text-align: left;
+    align-items: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 560px;
+}
+
+body.page-home .hero-description {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body.page-home .hero-buttons {
+    justify-content: flex-start;
+}
+
+body.page-home .hero-image-card--portrait {
+    box-shadow: none;
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--radius-sm);
+}
+
+.hero-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 2rem;
+    margin: 2rem 0 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-hairline);
+    max-width: 480px;
+}
+
+.hero-meta-grid div {
+    font-size: 0.88rem;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.hero-meta-grid div span {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-subtle);
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.hero-photo-tag {
+    display: block;
+    margin-top: 0.85rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-subtle);
+    text-align: center;
 }

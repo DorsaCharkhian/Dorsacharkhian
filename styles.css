@@ -1801,33 +1801,48 @@ section {
 .case-studies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     margin-bottom: 3rem;
 }
 
 .case-study-card {
     background: #ffffff;
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 2.25rem;
     border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.case-study-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-brand);
 }
 
 .case-study-card:hover {
     border-color: rgba(184, 120, 106, 0.25);
-    box-shadow: 0 2px 8px rgba(184, 120, 106, 0.06);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
 }
 
 .case-study-icon {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
     margin: 0 auto 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--color-surface-warm);
+    border-radius: 50%;
 }
 
 .case-study-icon img {
@@ -1835,6 +1850,8 @@ section {
     height: 100%;
     object-fit: contain;
     display: block;
+    padding: 14px;
+    box-sizing: border-box;
 }
 
 .case-study-icon i {
@@ -1853,8 +1870,9 @@ section {
 .case-study-header h3 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.375rem;
     font-weight: 700;
+    letter-spacing: -0.01em;
     color: #2d3748;
 }
 

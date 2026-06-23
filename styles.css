@@ -645,12 +645,19 @@ body, p {
     margin-bottom: 0;
 }
 
-/* Home page: sticky footer + hero section sizing */
+/* Home page: sticky footer + hero section sizing
+   NOTE (2026-06-23 layout fix): was `height:100vh; overflow:hidden`, which
+   forced the entire homepage into a single non-scrolling viewport. Once the
+   hero grew real content (photo + 3 floating research-signal cards), flexbox
+   shrank .hero (flex:1; min-height:0) down to whatever sliver of space was
+   left after Tools/Focus Areas/Footer claimed theirs, clipping/hiding most of
+   the hero. min-height instead of height (and no overflow:hidden) keeps the
+   sticky-footer behavior for short content while letting the page grow and
+   scroll normally for tall content - this is a flow fix, not a redesign. */
 .page-home {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
 }
 .page-home .footer {
     margin-top: auto;

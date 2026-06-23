@@ -18,6 +18,14 @@
     --color-brand-rgb: 181, 69, 58;
     --gradient-brand: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
 
+    /* AI accent - used sparingly: hero atmosphere, AI Agents section, AI-related kickers only */
+    --ai-accent: #5b5fef;
+    --ai-accent-2: #2dd4bf;
+    --ai-accent-rgb: 91, 95, 239;
+    --ai-accent-2-rgb: 45, 212, 191;
+    --gradient-ai: linear-gradient(135deg, var(--ai-accent) 0%, var(--ai-accent-2) 100%);
+    --gradient-brand-ai: linear-gradient(135deg, var(--color-brand) 0%, var(--ai-accent) 100%);
+
     /* Text */
     --color-text: #2d3748;
     --color-text-muted: #4a5568;
@@ -304,7 +312,10 @@ body, p {
     min-height: 70vh;
     display: flex;
     align-items: center;
-    background: transparent;
+    background:
+        radial-gradient(circle at 16% 20%, rgba(var(--ai-accent-rgb), 0.07), transparent 45%),
+        radial-gradient(circle at 86% 12%, rgba(var(--ai-accent-2-rgb), 0.06), transparent 50%),
+        radial-gradient(circle at 70% 88%, rgba(var(--color-brand-rgb), 0.05), transparent 50%);
     position: relative;
     z-index: 1;
     overflow-x: hidden;
@@ -322,6 +333,64 @@ body, p {
     bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23b5453a" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
     opacity: 0.3;
+}
+
+/* Subtle network/graph pattern - agentic systems visual cue, very low opacity */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><g stroke="%235b5fef" stroke-width="1" opacity="0.25"><line x1="40" y1="60" x2="160" y2="120"/><line x1="160" y1="120" x2="130" y2="240"/><line x1="160" y1="120" x2="300" y2="80"/><line x1="300" y1="80" x2="420" y2="150"/><line x1="420" y1="150" x2="560" y2="100"/><line x1="560" y1="100" x2="680" y2="170"/><line x1="130" y1="240" x2="280" y2="290"/><line x1="280" y1="290" x2="450" y2="260"/><line x1="450" y1="260" x2="620" y2="310"/></g><g fill="%232dd4bf" opacity="0.3"><circle cx="40" cy="60" r="2.5"/><circle cx="160" cy="120" r="2.5"/><circle cx="130" cy="240" r="2.5"/><circle cx="300" cy="80" r="2.5"/><circle cx="420" cy="150" r="2.5"/><circle cx="560" cy="100" r="2.5"/><circle cx="680" cy="170" r="2.5"/><circle cx="280" cy="290" r="2.5"/><circle cx="450" cy="260" r="2.5"/><circle cx="620" cy="310" r="2.5"/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero-eyebrow,
+    .hero .hero-tagline,
+    .hero-description,
+    .hero-buttons {
+        animation: heroFadeUp 0.7s var(--ease-standard) both;
+    }
+    .hero .hero-tagline { animation-delay: 0.05s; }
+    .hero-description { animation-delay: 0.15s; }
+    .hero-buttons { animation-delay: 0.25s; }
+}
+
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ai-accent);
+    background: rgba(var(--ai-accent-rgb), 0.08);
+    border: 1px solid rgba(var(--ai-accent-rgb), 0.22);
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radius-pill);
+    margin: 0 auto 1.25rem;
+}
+
+.gradient-text-ai {
+    background: var(--gradient-ai);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
 }
 
 .hero-container {
@@ -883,6 +952,22 @@ body, p {
     align-items: center;
     justify-content: center;
     flex: 1;
+}
+
+/* Glassmorphism accent panel behind the photo stack */
+.hero-visual::before {
+    content: '';
+    position: absolute;
+    top: 8%;
+    bottom: 8%;
+    left: 6%;
+    right: 6%;
+    border-radius: var(--radius-xl);
+    background: linear-gradient(160deg, rgba(var(--ai-accent-rgb), 0.08), rgba(var(--ai-accent-2-rgb), 0.05));
+    border: 1px solid rgba(var(--ai-accent-rgb), 0.12);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 0;
 }
 
 .hero-photo {
@@ -5227,5 +5312,124 @@ section {
     .page-home .hero-image-card--bg1,
     .page-home .hero-image-card--bg2 {
         width: min(100px, 22vw);
+    }
+}
+
+/* ============================================================
+   AI Agents & Applied AI Section (homepage only)
+   ============================================================ */
+.ai-agents {
+    background: var(--color-surface);
+    padding: var(--space-2xl) 0;
+    position: relative;
+}
+
+.ai-agents-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ai-accent);
+    margin-bottom: 0.5rem;
+}
+
+.ai-agents-triad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0 3rem;
+}
+
+.ai-agents-card {
+    padding: 1.75rem;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(160deg, rgba(var(--ai-accent-rgb), 0.04), var(--color-surface));
+    border: 1px solid rgba(var(--ai-accent-rgb), 0.14);
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-agents-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-ai);
+}
+
+.ai-agents-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: rgba(var(--ai-accent-rgb), 0.1);
+    color: var(--ai-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.ai-agents-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.ai-agents-card p {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.ai-agents-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.ai-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: rgba(var(--ai-accent-rgb), 0.07);
+    border: 1px solid rgba(var(--ai-accent-rgb), 0.2);
+    color: var(--ai-accent);
+}
+
+.ai-agents-workflow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.ai-workflow-node {
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    background: var(--color-surface-warm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.ai-workflow-arrow {
+    color: var(--ai-accent);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .ai-agents-triad {
+        grid-template-columns: 1fr;
     }
 }

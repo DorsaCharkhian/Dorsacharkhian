@@ -1053,10 +1053,6 @@ section {
 }
 
 /* Consistent spacing between major sections - 50% reduction */
-.about {
-    padding-bottom: 1.5rem;
-}
-
 .resume {
     padding-top: 0.5rem;
     padding-bottom: 2rem;
@@ -1080,7 +1076,7 @@ section {
 
 .teaching {
     padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 .contact {

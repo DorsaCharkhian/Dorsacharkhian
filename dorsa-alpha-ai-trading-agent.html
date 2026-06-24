@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>An AI Trading Agent That Knows When to Say No - Case Study | Dorsa Charkhian</title>
+    <link rel="stylesheet" href="styles.css?v=afbfaae">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .aa-stat-strip{display:flex;flex-wrap:wrap;gap:16px;margin:28px 0 8px;}
+        .aa-stat{flex:1 1 200px;background:var(--color-surface-warm);border:1px solid var(--color-hairline);border-radius:var(--radius-md);padding:18px 20px;}
+        .aa-stat-value{display:block;font-size:1.4rem;font-weight:700;color:var(--color-brand-dark);margin-bottom:4px;}
+        .aa-stat-label{display:block;font-size:0.85rem;color:var(--color-text-muted);line-height:1.35;}
+
+        .aa-tldr{background:var(--color-surface-paper);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:28px 30px;margin:24px 0;}
+        .aa-tldr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:14px;}
+        .aa-tldr-col h4{font-size:0.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--color-brand-dark);margin:0 0 8px;}
+        .aa-tldr-col ul{margin:0;padding-left:18px;}
+        .aa-tldr-col li{font-size:0.92rem;color:var(--color-text);line-height:1.5;margin-bottom:6px;}
+
+        .aa-agent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0;}
+        .aa-agent-card{background:var(--color-surface);border:1px solid var(--color-hairline);border-radius:var(--radius-md);padding:18px;box-shadow:var(--shadow-sm);}
+        .aa-agent-card-icon{width:34px;height:34px;border-radius:9px;background:rgba(181,69,58,0.1);color:var(--color-brand-dark);display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:0.95rem;}
+        .aa-agent-card h4{margin:0 0 4px;font-size:0.98rem;color:var(--color-text);}
+        .aa-agent-card p{margin:0 0 8px;font-size:0.85rem;color:var(--color-text-muted);line-height:1.45;}
+        .aa-agent-card .aa-rule{font-size:0.78rem;color:var(--color-brand-dark);border-top:1px solid var(--color-hairline);padding-top:8px;margin-top:8px;}
+
+        .aa-principle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0;}
+        .aa-principle-card{background:var(--color-surface-warm);border-left:3px solid var(--color-brand);border-radius:var(--radius-sm);padding:16px 18px;}
+        .aa-principle-card h4{margin:0 0 6px;font-size:0.92rem;color:var(--color-brand-dark);}
+        .aa-principle-card p{margin:0;font-size:0.88rem;color:var(--color-text);line-height:1.5;}
+
+        .aa-change-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0;}
+        .aa-change-card{background:var(--color-surface);border:1px solid var(--color-hairline);border-radius:var(--radius-md);padding:16px 18px;}
+        .aa-change-card .aa-change-tag{display:inline-block;font-size:0.72rem;text-transform:uppercase;letter-spacing:.03em;color:var(--color-brand-dark);background:rgba(181,69,58,0.08);padding:2px 8px;border-radius:var(--radius-pill);margin-bottom:8px;}
+        .aa-change-card p{margin:0;font-size:0.86rem;color:var(--color-text);line-height:1.5;}
+
+        .aa-pullquote{font-size:1.15rem;line-height:1.55;color:var(--color-text);border-left:3px solid var(--color-brand);padding-left:20px;margin:18px 0;font-style:italic;}
+
+        .aa-legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;font-size:0.8rem;color:var(--color-text-muted);align-items:center;}
+        .aa-legend span{display:inline-flex;align-items:center;gap:6px;}
+        .aa-legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+
+        @media (max-width: 760px){
+            .aa-tldr-grid, .aa-agent-grid, .aa-principle-grid, .aa-change-grid{grid-template-columns:1fr;}
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">Dorsa Charkhian</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="research.html" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="teaching.html" class="nav-link">Teaching</a>
+                </li>
+                <li class="nav-item nav-icon">
+                    <a href="https://www.linkedin.com/in/dorsa-charkhian/" target="_blank" class="nav-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="nav-item nav-icon">
+                    <a href="mailto:dorsacharkhian1@gmail.com" class="nav-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Case Study Hero -->
+    <section id="main-content" class="case-study-hero">
+        <div class="container">
+            <div class="case-study-hero-content">
+                <h1 class="case-study-title">An AI Trading Agent That Knows When to Say No</h1>
+                <p class="case-study-subtitle">Designing AI agents willing to say no - even to the people who built them</p>
+                <p class="case-study-meta">AI Agent Designer · Prompt Engineer · Workflow Architect — Confidential Client (Small Investment Firm)</p>
+                <p class="case-study-intro">A confidential investment firm's trading process ran on discretion, not discipline - research wasn't retained, and risk rules bent under pressure. I designed a six-agent AI system where every trade has to clear explicit research, risk, and portfolio gates, plus a human checkpoint it can never skip.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="case-study-content">
+        <div class="container">
+            <div class="case-study-body">
+
+                <!-- TL;DR Snapshot -->
+                <div class="aa-stat-strip" id="snapshot">
+                    <div class="aa-stat">
+                        <span class="aa-stat-value">6</span>
+                        <span class="aa-stat-label">Specialized AI Agents</span>
+                    </div>
+                    <div class="aa-stat">
+                        <span class="aa-stat-value">0</span>
+                        <span class="aa-stat-label">Trades Executed Without Approval</span>
+                    </div>
+                    <div class="aa-stat">
+                        <span class="aa-stat-value">$100K</span>
+                        <span class="aa-stat-label">Paper Trading Environment</span>
+                    </div>
+                    <div class="aa-stat">
+                        <span class="aa-stat-value">Required</span>
+                        <span class="aa-stat-label">Human Approval</span>
+                    </div>
+                </div>
+
+                <div class="aa-tldr">
+                    <h2 class="case-study-section-title" style="margin-top:0;"><a href="#snapshot">TL;DR Snapshot</a></h2>
+                    <div class="aa-tldr-grid">
+                        <div class="aa-tldr-col">
+                            <h4>The Brief</h4>
+                            <ul>
+                                <li>Research was scattered and hard to re-derive</li>
+                                <li>Risk discipline broke under pressure</li>
+                                <li>No memory of past mistakes or setups</li>
+                            </ul>
+                        </div>
+                        <div class="aa-tldr-col">
+                            <h4>My Approach</h4>
+                            <ul>
+                                <li>Six narrow agents, one job each</li>
+                                <li>Hard rules, default posture is reject</li>
+                                <li>Paper trading to generate evidence safely</li>
+                            </ul>
+                        </div>
+                        <div class="aa-tldr-col">
+                            <h4>Status Today</h4>
+                            <ul>
+                                <li>Full pipeline built and gated end-to-end</li>
+                                <li>Human approval preserved at every step</li>
+                                <li>First real decision data now being generated</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Setup -->
+                <div class="case-study-section" id="context">
+                    <h2 class="case-study-section-title"><a href="#context">The Setup</a></h2>
+                    <p class="case-study-text">This was a confidential engagement for a small investment/trading firm. I worked it solo - research, agent design, prompt engineering, and workflow architecture - with nothing handed to me pre-built. The firm's process already worked, in the sense that trades got made. It just didn't hold up under pressure or repetition.</p>
+                </div>
+
+                <!-- Problem -->
+                <div class="case-study-section" id="problem">
+                    <h2 class="case-study-section-title"><a href="#problem">Problem</a></h2>
+                    <p class="case-study-text">The client's research and trading process was structurally fragile in three specific ways:</p>
+                    <ul style="margin:0 0 16px 18px;">
+                        <li style="margin-bottom:6px;">Research on a given ticker had to be re-derived from scratch each time - nothing persisted between sessions.</li>
+                        <li style="margin-bottom:6px;">Risk discipline depended on willpower in the moment - stop-losses, sizing, and exposure limits were easy to bend "just this once."</li>
+                        <li style="margin-bottom:6px;">There was no record of what had already been learned - the same mistakes could repeat without anyone noticing the pattern.</li>
+                    </ul>
+                    <p class="case-study-text">None of that is a strategy problem - it's a discipline-and-memory problem. Solving it meant building agents that could actually refuse a request, not just agree with whatever the user wanted to hear.</p>
+                </div>
+
+                <!-- What I Did -->
+                <div class="case-study-section" id="role">
+                    <h2 class="case-study-section-title"><a href="#role">What I Did</a></h2>
+                    <p class="case-study-text">I designed and built six narrow-purpose agents end-to-end, plus a human approval checkpoint that sits between every agent's output and any action taken on it. I wrote each agent as a full specification - not a prompt - with a fixed output format, a set of hard rules it cannot be talked out of, and worked examples covering both approval and every rejection path.</p>
+                    <div class="aa-legend">
+                        <span><i style="background:rgba(181,69,58,0.25);border:1px solid #b5453a;"></i> Agent-automated</span>
+                        <span><i style="background:#b5453a;"></i> Human-required</span>
+                        <span><i style="background:#eef6f1;border:1px solid #3f8f5f;"></i> Active path (paper trading)</span>
+                        <span><i style="background:#f4f4f5;border:1px dashed #9aa0a8;"></i> Disabled (no live broker yet)</span>
+                    </div>
+                    <figure class="case-study-figure">
+                        <svg viewBox="0 0 1000 470" role="img" aria-labelledby="arch-title arch-desc" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Inter',sans-serif;">
+                            <title id="arch-title">Merged system architecture and agent workflow diagram</title>
+                            <desc id="arch-desc">Data sources feed Research Analyst, which feeds a gate pipeline of Strategy Lab, Market Regime Master, Risk Manager, and Portfolio Manager, which feeds a human approval checkpoint, which splits to the active Paper Trading Environment and a disabled Live Execution Layer. Paper Trading connects to the Backtesting Engine and the Memory Engine, which loops back to Research Analyst.</desc>
+                            <defs>
+                                <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+                                    <path d="M0,0 L10,5 L0,10 z" fill="#6b7280"></path>
+                                </marker>
+                            </defs>
+
+                            <!-- Data Sources -->
+                            <rect x="40" y="12" width="920" height="50" rx="12" fill="#fcfbfa" stroke="#e3d9c9" stroke-width="1.5"></rect>
+                            <text x="500" y="32" text-anchor="middle" font-size="11" font-weight="600" fill="#4a5568">Data Sources</text>
+                            <text x="500" y="50" text-anchor="middle" font-size="9.5" fill="#6b7280">Finviz · TradingView · Filings &amp; earnings · Analyst actions · Economic calendar · Sector rotation</text>
+                            <line x1="500" y1="62" x2="500" y2="84" stroke="#6b7280" stroke-width="2" marker-end="url(#a1)"></line>
+
+                            <!-- Research Analyst -->
+                            <rect x="370" y="86" width="260" height="44" rx="10" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.5"></rect>
+                            <text x="500" y="113" text-anchor="middle" font-size="12" font-weight="600" fill="#9a3a30">Research Analyst — evidence + score</text>
+                            <line x1="500" y1="130" x2="500" y2="152" stroke="#6b7280" stroke-width="2" marker-end="url(#a1)"></line>
+
+                            <!-- Gate Pipeline band -->
+                            <rect x="120" y="154" width="760" height="86" rx="12" fill="#fcfbfa" stroke="#e3d9c9" stroke-width="1.5"></rect>
+                            <text x="500" y="172" text-anchor="middle" font-size="10.5" font-weight="600" fill="#4a5568">Gate Pipeline — in sequence, any gate can reject</text>
+
+                            <rect x="138" y="184" width="160" height="42" rx="8" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.2"></rect>
+                            <text x="218" y="209" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3a30">Strategy Lab</text>
+
+                            <rect x="318" y="184" width="170" height="42" rx="8" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.2"></rect>
+                            <text x="403" y="209" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3a30">Market Regime Master</text>
+
+                            <rect x="508" y="184" width="150" height="42" rx="8" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.2"></rect>
+                            <text x="583" y="209" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3a30">Risk Manager</text>
+
+                            <rect x="678" y="184" width="182" height="42" rx="8" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.2"></rect>
+                            <text x="769" y="209" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3a30">Portfolio Manager</text>
+
+                            <line x1="500" y1="240" x2="500" y2="262" stroke="#6b7280" stroke-width="2" marker-end="url(#a1)"></line>
+
+                            <!-- Approval Staging human -->
+                            <rect x="380" y="264" width="240" height="50" rx="12" fill="#b5453a" stroke="#9a3a30" stroke-width="1.5"></rect>
+                            <text x="500" y="294" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">Approval Staging — human checkpoint</text>
+
+                            <line x1="440" y1="314" x2="280" y2="344" stroke="#6b7280" stroke-width="2" marker-end="url(#a1)"></line>
+                            <line x1="560" y1="314" x2="720" y2="344" stroke="#6b7280" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#a1)"></line>
+
+                            <!-- Paper Trading -->
+                            <rect x="120" y="346" width="240" height="46" rx="12" fill="#eef6f1" stroke="#3f8f5f" stroke-width="1.5"></rect>
+                            <text x="240" y="374" text-anchor="middle" font-size="11.5" font-weight="600" fill="#2f6b48">Paper Trading Environment</text>
+
+                            <!-- Live execution disabled -->
+                            <rect x="640" y="346" width="240" height="46" rx="12" fill="#f4f4f5" stroke="#9aa0a8" stroke-width="1.5" stroke-dasharray="5,4"></rect>
+                            <text x="760" y="367" text-anchor="middle" font-size="10.5" font-weight="600" fill="#6b7280">Live Execution Layer</text>
+                            <text x="760" y="382" text-anchor="middle" font-size="9" fill="#9aa0a8">disabled — no real broker connected yet</text>
+
+                            <!-- Backtesting connector -->
+                            <rect x="20" y="346" width="0" height="0"></rect>
+                            <line x1="120" y1="369" x2="30" y2="369" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#a1)"></line>
+                            <text x="25" y="365" text-anchor="end" font-size="9" fill="#6b7280">shares metric formulas</text>
+                            <text x="25" y="378" text-anchor="end" font-size="9" fill="#6b7280">with Backtesting Engine</text>
+
+                            <!-- Memory loop -->
+                            <path d="M240,392 C240,430 500,440 500,402" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#a1)"></path>
+                            <rect x="420" y="406" width="160" height="34" rx="8" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.2"></rect>
+                            <text x="500" y="427" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3a30">Memory Engine</text>
+
+                            <text x="500" y="458" text-anchor="middle" font-size="10" fill="#6b7280">Memory Engine findings loop back into Research Analyst for the next idea — append-only, never overwritten.</text>
+                        </svg>
+                        <figcaption>The full system in one view. Strategy Lab and Market Regime Master are upstream gates documented in the same pipeline; Research Analyst, Risk Manager, Portfolio Manager, the Backtesting Engine, the Paper Trading Environment, and the Memory Engine are the six agents I designed and built in depth.</figcaption>
+                    </figure>
+                    <div class="aa-agent-grid">
+                        <div class="aa-agent-card">
+                            <div class="aa-agent-card-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                            <h4>Research Analyst</h4>
+                            <p>Gathers and scores evidence on a ticker across filings, earnings, and analyst actions.</p>
+                            <p class="aa-rule">Rule: never recommends a trade, no execution authority.</p>
+                        </div>
+                        <div class="aa-agent-card">
+                            <div class="aa-agent-card-icon"><i class="fas fa-shield-halved"></i></div>
+                            <h4>Risk Manager</h4>
+                            <p>Gatekeeper for one trade's structure - approves or rejects against hard capital-preservation rules.</p>
+                            <p class="aa-rule">Rule: default posture is reject; the rule wins over the opportunity.</p>
+                        </div>
+                        <div class="aa-agent-card">
+                            <div class="aa-agent-card-icon"><i class="fas fa-chart-pie"></i></div>
+                            <h4>Portfolio Manager</h4>
+                            <p>Checks the whole book - concentration, sector exposure, cash reserves.</p>
+                            <p class="aa-rule">Rule: recommendations only, never auto-executes a rebalance.</p>
+                        </div>
+                        <div class="aa-agent-card">
+                            <div class="aa-agent-card-icon"><i class="fas fa-clock-rotate-left"></i></div>
+                            <h4>Backtesting Engine</h4>
+                            <p>Runs a strategy against history, benchmarked to SPY, before it can be called "Active."</p>
+                            <p class="aa-rule">Rule: logs every result, including failed and inconclusive tests.</p>
+                        </div>
+                        <div class="aa-agent-card">
+                            <div class="aa-agent-card-icon"><i class="fas fa-flask"></i></div>
+                            <h4>Paper Trading Environment</h4>
+                            <p>Runs the full pipeline against a simulated $100K account - same gates, no exceptions.</p>
+                            <p class="aa-rule">Rule: human approval required before every paper fill too.</p>
+                        </div>
+                        <div class="aa-agent-card">
+                            <div class="aa-agent-card-icon"><i class="fas fa-brain"></i></div>
+                            <h4>Memory Engine</h4>
+                            <p>Append-only record of setups, mistakes, and ticker history, tagged by evidence status.</p>
+                            <p class="aa-rule">Rule: no opinion self-promotes to a rule without evidence.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How I Approached It -->
+                <div class="case-study-section" id="methods">
+                    <h2 class="case-study-section-title"><a href="#methods">How I Approached It</a></h2>
+                    <div class="aa-principle-grid">
+                        <div class="aa-principle-card">
+                            <h4>Default posture is reject</h4>
+                            <p>A trade only becomes approved once every rule has passed - never the reverse. If a rule and a good opportunity conflict, the rule wins.</p>
+                        </div>
+                        <div class="aa-principle-card">
+                            <h4>Pressure isn't new information</h4>
+                            <p>"Just this once" gets treated as pressure, not evidence. The agent restates the rule and the reason instead of re-evaluating the trade.</p>
+                        </div>
+                        <div class="aa-principle-card">
+                            <h4>One job per agent</h4>
+                            <p>No agent can recommend, size, and approve a trade at once. Splitting responsibility made every decision independently auditable.</p>
+                        </div>
+                        <div class="aa-principle-card">
+                            <h4>Evidence has to earn its status</h4>
+                            <p>Findings are tagged Observation, Hypothesis, Testing, Confirmed, or Retired. Conviction alone - even repeated - never promotes itself to Confirmed.</p>
+                        </div>
+                    </div>
+                    <p class="case-study-text">Risk Manager's checks run in a fixed order and stop at the first failure. Grouping them into four stages, instead of a flat list, made the agent's behavior easy to test: break one rule, and it fails at exactly the right stage.</p>
+                    <figure class="case-study-figure">
+                        <svg viewBox="0 0 720 480" role="img" aria-labelledby="dec-title dec-desc" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:540px;height:auto;display:block;margin:0 auto;font-family:'Inter',sans-serif;">
+                            <title id="dec-title">Condensed risk-gate decision flow</title>
+                            <desc id="dec-desc">A flowchart of Risk Manager's four grouped check stages, each able to reject the trade, ending in approved.</desc>
+                            <defs>
+                                <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+                                    <path d="M0,0 L10,5 L0,10 z" fill="#6b7280"></path>
+                                </marker>
+                            </defs>
+
+                            <rect x="260" y="10" width="200" height="42" rx="21" fill="#fcfbfa" stroke="#e3d9c9" stroke-width="1.5"></rect>
+                            <text x="360" y="36" text-anchor="middle" font-size="11.5" font-weight="600" fill="#4a5568">Proposed Trade</text>
+                            <line x1="360" y1="52" x2="360" y2="74" stroke="#6b7280" stroke-width="2" marker-end="url(#a2)"></line>
+
+                            <!-- Stage 1 -->
+                            <rect x="210" y="76" width="300" height="68" rx="10" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.5"></rect>
+                            <text x="360" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3a30">1. Structural Validity</text>
+                            <text x="360" y="114" text-anchor="middle" font-size="9.5" fill="#6b7280">Stop loss valid · No margin, cash covers it</text>
+                            <text x="360" y="128" text-anchor="middle" font-size="9.5" fill="#6b7280">Entry price ≥ $5.00</text>
+                            <line x1="510" y1="110" x2="600" y2="110" stroke="#8a3530" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#a2)"></line>
+                            <text x="605" y="106" font-size="9.5" fill="#8a3530">REJECTED</text>
+                            <text x="605" y="118" font-size="9" fill="#8a3530">names the failed rule</text>
+                            <line x1="360" y1="144" x2="360" y2="166" stroke="#6b7280" stroke-width="2" marker-end="url(#a2)"></line>
+
+                            <!-- Stage 2 -->
+                            <rect x="210" y="168" width="300" height="58" rx="10" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.5"></rect>
+                            <text x="360" y="190" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3a30">2. Circuit Breakers</text>
+                            <text x="360" y="206" text-anchor="middle" font-size="9.5" fill="#6b7280">Daily loss &lt; 2% of day-open equity</text>
+                            <text x="360" y="219" text-anchor="middle" font-size="9.5" fill="#6b7280">Weekly loss &lt; 5% of week-open equity</text>
+                            <line x1="510" y1="197" x2="600" y2="197" stroke="#8a3530" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#a2)"></line>
+                            <text x="605" y="193" font-size="9.5" fill="#8a3530">REJECTED</text>
+                            <text x="605" y="205" font-size="9" fill="#8a3530">breaker already tripped</text>
+                            <line x1="360" y1="226" x2="360" y2="248" stroke="#6b7280" stroke-width="2" marker-end="url(#a2)"></line>
+
+                            <!-- Stage 3 -->
+                            <rect x="210" y="250" width="300" height="58" rx="10" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.5"></rect>
+                            <text x="360" y="272" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3a30">3. Sizing &amp; Cash Check</text>
+                            <text x="360" y="288" text-anchor="middle" font-size="9.5" fill="#6b7280">1%-of-equity position size, rounded down,</text>
+                            <text x="360" y="301" text-anchor="middle" font-size="9.5" fill="#6b7280">always - must fit cash on hand</text>
+                            <line x1="510" y1="279" x2="600" y2="279" stroke="#8a3530" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#a2)"></line>
+                            <text x="605" y="275" font-size="9.5" fill="#8a3530">REJECTED</text>
+                            <text x="605" y="287" font-size="9" fill="#8a3530">doesn't fit cash on hand</text>
+                            <line x1="360" y1="308" x2="360" y2="330" stroke="#6b7280" stroke-width="2" marker-end="url(#a2)"></line>
+
+                            <!-- Stage 4 -->
+                            <rect x="210" y="332" width="300" height="50" rx="10" fill="#fcfbfa" stroke="#e3d9c9" stroke-width="1.5"></rect>
+                            <text x="360" y="354" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4a5568">4. Risk/Reward</text>
+                            <text x="360" y="370" text-anchor="middle" font-size="9.5" fill="#6b7280">Computed and surfaced every time</text>
+                            <text x="605" y="354" font-size="9.5" fill="#6b7280">weak R:R is</text>
+                            <text x="605" y="366" font-size="9.5" fill="#6b7280">flagged, not</text>
+                            <text x="605" y="378" font-size="9.5" fill="#6b7280">auto-rejected</text>
+                            <line x1="360" y1="382" x2="360" y2="404" stroke="#6b7280" stroke-width="2" marker-end="url(#a2)"></line>
+
+                            <!-- Approved -->
+                            <rect x="260" y="406" width="200" height="48" rx="24" fill="#eef6f1" stroke="#3f8f5f" stroke-width="2"></rect>
+                            <text x="360" y="435" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6b48">APPROVED</text>
+
+                            <text x="360" y="470" text-anchor="middle" font-size="9.5" fill="#6b7280">Every rejection is logged with the exact rule name - never silent.</text>
+                        </svg>
+                        <figcaption>Risk Manager's four grouped check stages - same underlying rules as a flat checklist, organized so a failure is easy to locate and explain.</figcaption>
+                    </figure>
+                </div>
+
+                <!-- What I Learned -->
+                <div class="case-study-section" id="insights">
+                    <h2 class="case-study-section-title"><a href="#insights">What I Learned</a></h2>
+                    <p class="aa-pullquote">The hard part was never getting an agent to compute a position size correctly - that's a formula. The hard part was getting it to hold a boundary under direct pressure from the person it answers to.</p>
+                    <p class="case-study-text">I also learned to be deliberate about where automation stops. It would have been easy to let "the system handles it" quietly expand into decisions that should stay with the client:</p>
+                    <ul style="margin:0 0 16px 18px;">
+                        <li style="margin-bottom:6px;">Moving a strategy to Active</li>
+                        <li style="margin-bottom:6px;">Promoting a memory finding to a rule</li>
+                        <li style="margin-bottom:6px;">Approving a trade</li>
+                    </ul>
+                    <p class="case-study-text">I rewrote every skill so the agent's job ends at a recommendation, and the client's approval begins right after. The agents compute, score, and propose - whether a trade happens, or a finding becomes a rule, is never decided by the agents themselves. It's decided by the client, every time.</p>
+                    <figure class="case-study-figure">
+                        <svg viewBox="0 0 1000 260" role="img" aria-labelledby="hil-title hil-desc" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Inter',sans-serif;">
+                            <title id="hil-title">Human-in-the-loop diagram</title>
+                            <desc id="hil-desc">A pipeline showing which steps the agents handle automatically and which steps require explicit human approval.</desc>
+                            <defs>
+                                <marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M0,0 L10,5 L0,10 z" fill="#6b7280"></path>
+                                </marker>
+                            </defs>
+
+                            <rect x="40" y="14" width="16" height="16" rx="3" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.2"></rect>
+                            <text x="62" y="27" font-size="10.5" fill="#4a5568">Agent-automated</text>
+                            <rect x="200" y="14" width="16" height="16" rx="3" fill="#b5453a"></rect>
+                            <text x="222" y="27" font-size="10.5" fill="#4a5568">Human-required, no exceptions</text>
+
+                            <line x1="60" y1="150" x2="940" y2="150" stroke="#e3d9c9" stroke-width="2"></line>
+
+                            <rect x="20" y="115" width="150" height="70" rx="10" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.5"></rect>
+                            <text x="95" y="142" text-anchor="middle" font-size="11" font-weight="600" fill="#9a3a30">Research &amp;</text>
+                            <text x="95" y="157" text-anchor="middle" font-size="11" font-weight="600" fill="#9a3a30">scoring</text>
+                            <text x="95" y="172" text-anchor="middle" font-size="9" fill="#6b7280">automated</text>
+
+                            <rect x="195" y="115" width="150" height="70" rx="10" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.5"></rect>
+                            <text x="270" y="142" text-anchor="middle" font-size="11" font-weight="600" fill="#9a3a30">Risk &amp; portfolio</text>
+                            <text x="270" y="157" text-anchor="middle" font-size="11" font-weight="600" fill="#9a3a30">math</text>
+                            <text x="270" y="172" text-anchor="middle" font-size="9" fill="#6b7280">automated</text>
+
+                            <rect x="370" y="100" width="160" height="100" rx="12" fill="#b5453a" stroke="#9a3a30" stroke-width="1.5"></rect>
+                            <text x="450" y="135" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">Approval</text>
+                            <text x="450" y="151" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">Staging</text>
+                            <text x="450" y="170" text-anchor="middle" font-size="9.5" fill="#fbe7e3">explicit yes/no -</text>
+                            <text x="450" y="183" text-anchor="middle" font-size="9.5" fill="#fbe7e3">every single trade</text>
+
+                            <rect x="555" y="115" width="150" height="70" rx="10" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.5"></rect>
+                            <text x="630" y="142" text-anchor="middle" font-size="11" font-weight="600" fill="#9a3a30">Paper fill /</text>
+                            <text x="630" y="157" text-anchor="middle" font-size="11" font-weight="600" fill="#9a3a30">reject + log</text>
+                            <text x="630" y="172" text-anchor="middle" font-size="9" fill="#6b7280">automated</text>
+
+                            <rect x="730" y="100" width="120" height="100" rx="12" fill="#b5453a" stroke="#9a3a30" stroke-width="1.5"></rect>
+                            <text x="790" y="135" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">Promote</text>
+                            <text x="790" y="151" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">to Active</text>
+                            <text x="790" y="170" text-anchor="middle" font-size="9" fill="#fbe7e3">strategy or</text>
+                            <text x="790" y="183" text-anchor="middle" font-size="9" fill="#fbe7e3">memory rule</text>
+
+                            <rect x="875" y="115" width="105" height="70" rx="10" fill="rgba(181,69,58,0.08)" stroke="#b5453a" stroke-width="1.5"></rect>
+                            <text x="927" y="142" text-anchor="middle" font-size="10.5" font-weight="600" fill="#9a3a30">Memory</text>
+                            <text x="927" y="157" text-anchor="middle" font-size="10.5" font-weight="600" fill="#9a3a30">tagging</text>
+                            <text x="927" y="172" text-anchor="middle" font-size="9" fill="#6b7280">automated</text>
+
+                            <line x1="170" y1="150" x2="193" y2="150" stroke="#6b7280" stroke-width="2" marker-end="url(#a4)"></line>
+                            <line x1="345" y1="150" x2="368" y2="150" stroke="#6b7280" stroke-width="2" marker-end="url(#a4)"></line>
+                            <line x1="530" y1="150" x2="553" y2="150" stroke="#6b7280" stroke-width="2" marker-end="url(#a4)"></line>
+                            <line x1="705" y1="150" x2="728" y2="150" stroke="#6b7280" stroke-width="2" marker-end="url(#a4)"></line>
+                            <line x1="850" y1="150" x2="873" y2="150" stroke="#6b7280" stroke-width="2" marker-end="url(#a4)"></line>
+                        </svg>
+                        <figcaption>Where the agents run on their own, and where the pipeline stops and waits on the client - on purpose, in both paper and live mode.</figcaption>
+                    </figure>
+                </div>
+
+                <!-- The Pivot -->
+                <div class="case-study-section" id="decisions">
+                    <h2 class="case-study-section-title"><a href="#decisions">The Pivot</a></h2>
+                    <p class="case-study-text">The strategy didn't change. What changed is whether the process has a memory and a spine.</p>
+                    <figure class="case-study-figure">
+                        <svg viewBox="0 0 1000 360" role="img" aria-labelledby="ba-title ba-desc" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Inter',sans-serif;">
+                            <title id="ba-title">Before and after process diagram</title>
+                            <desc id="ba-desc">A comparison table contrasting discretionary trading before this system with the gated, evidence-tracked process after.</desc>
+
+                            <rect x="40" y="15" width="430" height="44" rx="10" fill="#fcfbfa" stroke="#e3d9c9" stroke-width="1.5"></rect>
+                            <text x="255" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">Before: discretionary</text>
+
+                            <rect x="530" y="15" width="430" height="44" rx="10" fill="#b5453a" stroke="#9a3a30" stroke-width="1.5"></rect>
+                            <text x="745" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">After: Gated &amp; Accountable</text>
+
+                            <rect x="40" y="70" width="430" height="56" rx="8" fill="#ffffff" stroke="#e3d9c9" stroke-width="1"></rect>
+                            <text x="58" y="92" font-size="10.5" font-weight="600" fill="#4a5568">Research</text>
+                            <text x="58" y="108" font-size="10" fill="#6b7280">Scattered notes, re-derived from</text>
+                            <text x="58" y="120" font-size="10" fill="#6b7280">scratch each time a ticker was revisited</text>
+
+                            <rect x="530" y="70" width="430" height="56" rx="8" fill="#fff9f7" stroke="rgba(181,69,58,0.3)" stroke-width="1"></rect>
+                            <text x="548" y="92" font-size="10.5" font-weight="600" fill="#9a3a30">Research</text>
+                            <text x="548" y="108" font-size="10" fill="#6b7280">Dated, evidence-rated reports appended</text>
+                            <text x="548" y="120" font-size="10" fill="#6b7280">to a running file per ticker</text>
+
+                            <rect x="40" y="134" width="430" height="56" rx="8" fill="#ffffff" stroke="#e3d9c9" stroke-width="1"></rect>
+                            <text x="58" y="156" font-size="10.5" font-weight="600" fill="#4a5568">Position sizing</text>
+                            <text x="58" y="172" font-size="10" fill="#6b7280">By feel, in the moment, no enforced</text>
+                            <text x="58" y="184" font-size="10" fill="#6b7280">stop-loss requirement</text>
+
+                            <rect x="530" y="134" width="430" height="56" rx="8" fill="#fff9f7" stroke="rgba(181,69,58,0.3)" stroke-width="1"></rect>
+                            <text x="548" y="156" font-size="10.5" font-weight="600" fill="#9a3a30">Position sizing</text>
+                            <text x="548" y="172" font-size="10" fill="#6b7280">1%-of-equity rule, no stop loss means</text>
+                            <text x="548" y="184" font-size="10" fill="#6b7280">no trade, full math shown every time</text>
+
+                            <rect x="40" y="198" width="430" height="56" rx="8" fill="#ffffff" stroke="#e3d9c9" stroke-width="1"></rect>
+                            <text x="58" y="220" font-size="10.5" font-weight="600" fill="#4a5568">Memory</text>
+                            <text x="58" y="236" font-size="10" fill="#6b7280">Whatever happened to be remembered -</text>
+                            <text x="58" y="248" font-size="10" fill="#6b7280">no record of past mistakes</text>
+
+                            <rect x="530" y="198" width="430" height="56" rx="8" fill="#fff9f7" stroke="rgba(181,69,58,0.3)" stroke-width="1"></rect>
+                            <text x="548" y="220" font-size="10.5" font-weight="600" fill="#9a3a30">Memory</text>
+                            <text x="548" y="236" font-size="10" fill="#6b7280">Append-only, status-tagged record that</text>
+                            <text x="548" y="248" font-size="10" fill="#6b7280">survives between sessions</text>
+
+                            <rect x="40" y="262" width="430" height="56" rx="8" fill="#ffffff" stroke="#e3d9c9" stroke-width="1"></rect>
+                            <text x="58" y="284" font-size="10.5" font-weight="600" fill="#4a5568">Pressure / override</text>
+                            <text x="58" y="300" font-size="10" fill="#6b7280">"Just this once" usually won, because</text>
+                            <text x="58" y="312" font-size="10" fill="#6b7280">no one was there to push back</text>
+
+                            <rect x="530" y="262" width="430" height="56" rx="8" fill="#fff9f7" stroke="rgba(181,69,58,0.3)" stroke-width="1"></rect>
+                            <text x="548" y="284" font-size="10.5" font-weight="600" fill="#9a3a30">Pressure / override</text>
+                            <text x="548" y="300" font-size="10" fill="#6b7280">Agent restates the rule and the reason -</text>
+                            <text x="548" y="312" font-size="10" fill="#6b7280">pressure is logged, not rewarded</text>
+                        </svg>
+                    </figure>
+                    <div class="aa-change-grid">
+                        <div class="aa-change-card">
+                            <span class="aa-change-tag">Gap found</span>
+                            <p>Win rate and expectancy were both blocked by one fact: zero trades had ever closed. I added the Paper Trading Environment to generate real decision data safely, through the same gates a live trade faces.</p>
+                        </div>
+                        <div class="aa-change-card">
+                            <span class="aa-change-tag">Rule added</span>
+                            <p>Paper trades closed faster than real evidence could justify. I capped paper-derived memory findings at Observation/Hypothesis - never Confirmed - until they clear the same sample-size bar real evidence needs.</p>
+                        </div>
+                        <div class="aa-change-card">
+                            <span class="aa-change-tag">Framing fixed</span>
+                            <p>"Automatic" close-checking implied live streaming the system doesn't have. I replaced it with an explicit disclosure: positions are checked at invocation time, not streamed continuously.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact -->
+                <div class="case-study-section case-study-impact" id="impact">
+                    <h2 class="case-study-section-title"><a href="#impact">Impact</a></h2>
+                    <p class="case-study-text">There's no win rate to report, and I'm not going to dress one up - zero live trades have been placed, and the paper book is still early. That's the right state for a system like this to be in before real capital is involved; the impact here is the process it produced.</p>
+                    <div class="impact-metrics">
+                        <div class="impact-metric">
+                            <span class="impact-number">6</span>
+                            <span class="impact-label">Specialized AI Agents</span>
+                        </div>
+                        <div class="impact-metric">
+                            <span class="impact-number">0</span>
+                            <span class="impact-label">Trades Executed Without Approval</span>
+                        </div>
+                        <div class="impact-metric">
+                            <span class="impact-number">Live</span>
+                            <span class="impact-label">First Real Decision Data</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What Stayed With Me -->
+                <div class="case-study-section case-study-takeaway" id="takeaway">
+                    <h2 class="case-study-section-title"><a href="#takeaway">What Stayed With Me</a></h2>
+                    <p class="case-study-text case-study-takeaway-text">The agents didn't need to be smarter to be trustworthy - they needed narrower jobs and the willingness to say no. The best thing I built into this system wasn't a feature. It was a boundary it won't cross, even under pressure.</p>
+                </div>
+
+                <!-- Tools -->
+                <div class="case-study-section case-study-tools">
+                    <p class="case-study-text case-study-tools-text">
+                        <span class="case-study-tool"><i class="fas fa-robot" aria-hidden="true"></i> Claude</span>
+                        <span class="case-study-tool-sep">·</span>
+                        <span class="case-study-tool"><i class="fas fa-pen-nib" aria-hidden="true"></i> Prompt Engineering</span>
+                        <span class="case-study-tool-sep">·</span>
+                        <span class="case-study-tool"><i class="fas fa-diagram-project" aria-hidden="true"></i> Agent Architecture</span>
+                        <span class="case-study-tool-sep">·</span>
+                        <span class="case-study-tool"><i class="fas fa-shield-halved" aria-hidden="true"></i> Risk &amp; Workflow Design</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

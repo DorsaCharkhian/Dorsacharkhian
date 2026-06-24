@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>An AI Trading Agent That Knows When to Say No - Case Study | Dorsa Charkhian</title>
+    <title>AI Trading Agent for Research, Risk Management, and Robinhood Execution - Case Study | Dorsa Charkhian</title>
     <link rel="stylesheet" href="styles.css?v=afbfaae">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -93,7 +93,7 @@
     <section id="main-content" class="case-study-hero">
         <div class="container">
             <div class="case-study-hero-content">
-                <h1 class="case-study-title">An AI Trading Agent That Knows When to Say No</h1>
+                <h1 class="case-study-title">AI Trading Agent for Research, Risk Management, and Robinhood Execution</h1>
                 <p class="case-study-subtitle">Designing AI agents willing to say no - even to the people who built them</p>
                 <p class="case-study-meta">AI Agent Designer · Prompt Engineer · Workflow Architect — Confidential Client (Small Investment Firm)</p>
                 <p class="case-study-intro">A confidential investment firm's trading process ran on discretion, not discipline - research wasn't retained, and risk rules bent under pressure. I designed a six-agent AI system where every trade has to clear explicit research, risk, and portfolio gates, plus a human checkpoint it can never skip.</p>
@@ -107,34 +107,26 @@
             <div class="case-study-body">
 
                 <!-- TL;DR Snapshot -->
-                <div class="aa-tldr" id="snapshot">
-                    <h2 class="case-study-section-title" style="margin-top:0;"><a href="#snapshot">TL;DR Snapshot</a></h2>
-                    <div class="aa-tldr-grid">
-                        <div class="aa-tldr-col">
-                            <h4>The Brief</h4>
-                            <ul>
-                                <li>Research was scattered and hard to re-derive</li>
-                                <li>Risk discipline broke under pressure</li>
-                                <li>No memory of past mistakes or setups</li>
-                            </ul>
-                        </div>
-                        <div class="aa-tldr-col">
-                            <h4>My Approach</h4>
-                            <ul>
-                                <li>Six narrow agents, one job each</li>
-                                <li>Hard rules, default posture is reject</li>
-                                <li>Paper trading to generate evidence safely</li>
-                            </ul>
-                        </div>
-                        <div class="aa-tldr-col">
-                            <h4>Status Today</h4>
-                            <ul>
-                                <li>Full pipeline built and gated end-to-end</li>
-                                <li>Human approval preserved at every step</li>
-                                <li>First real decision data now being generated</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="case-study-snapshot" id="snapshot">
+                    <h2 class="case-study-snapshot-title"><a href="#snapshot">TL;DR Snapshot</a></h2>
+                    <dl class="case-study-snapshot-list">
+                        <dt>Role</dt>
+                        <dd>AI Agent Designer · Prompt Engineer · Workflow Architect</dd>
+                        <dt>Client</dt>
+                        <dd>Confidential Client (Small Investment Firm)</dd>
+                        <dt>Project Type</dt>
+                        <dd>AI Trading Agent Design &amp; Robinhood Workflow Automation</dd>
+                        <dt>Duration</dt>
+                        <dd>Ongoing engagement (active development, no fixed end date)</dd>
+                        <dt>Architecture</dt>
+                        <dd>Six-agent pipeline feeding a mandatory human approval checkpoint, with execution staged for Robinhood, backed by a Backtesting Engine and Memory Engine</dd>
+                        <dt>Core Capabilities</dt>
+                        <dd>Research synthesis, evidence scoring, risk-gated trade evaluation, portfolio constraints, human approval, Robinhood-oriented execution staging, and persistent decision memory</dd>
+                        <dt>Validation Method</dt>
+                        <dd>Backtesting Engine + $100K Paper Trading Environment</dd>
+                        <dt>Outcome</dt>
+                        <dd>Structured trading workflow with enforced risk controls, persistent memory, and human approval</dd>
+                    </dl>
                 </div>
 
                 <!-- The Setup -->
@@ -163,12 +155,12 @@
                         <span><i style="background:rgba(181,69,58,0.25);border:1px solid #b5453a;"></i> Agent-automated</span>
                         <span><i style="background:#b5453a;"></i> Human-required</span>
                         <span><i style="background:#eef6f1;border:1px solid #3f8f5f;"></i> Active path (paper trading)</span>
-                        <span><i style="background:#f4f4f5;border:1px dashed #9aa0a8;"></i> Disabled (no live broker yet)</span>
+                        <span><i style="background:#f4f4f5;border:1px dashed #9aa0a8;"></i> Disabled — Robinhood, paper trading only</span>
                     </div>
                     <figure class="case-study-figure">
                         <svg viewBox="0 0 1000 470" role="img" aria-labelledby="arch-title arch-desc" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Inter',sans-serif;">
                             <title id="arch-title">Merged system architecture and agent workflow diagram</title>
-                            <desc id="arch-desc">Data sources feed Research Analyst, which feeds a gate pipeline of Strategy Lab, Market Regime Master, Risk Manager, and Portfolio Manager, which feeds a human approval checkpoint, which splits to the active Paper Trading Environment and a disabled Live Execution Layer. Paper Trading connects to the Backtesting Engine and the Memory Engine, which loops back to Research Analyst.</desc>
+                            <desc id="arch-desc">Data sources feed Research Analyst, which feeds a gate pipeline of Strategy Lab, Market Regime Master, Risk Manager, and Portfolio Manager, which feeds a human approval checkpoint, which splits to the active Paper Trading Environment and a built-but-disabled Robinhood Execution Layer (paper trading only). Paper Trading connects to the Backtesting Engine and the Memory Engine, which loops back to Research Analyst.</desc>
                             <defs>
                                 <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
                                     <path d="M0,0 L10,5 L0,10 z" fill="#6b7280"></path>
@@ -215,10 +207,10 @@
                             <rect x="120" y="346" width="240" height="46" rx="12" fill="#eef6f1" stroke="#3f8f5f" stroke-width="1.5"></rect>
                             <text x="240" y="374" text-anchor="middle" font-size="11.5" font-weight="600" fill="#2f6b48">Paper Trading Environment</text>
 
-                            <!-- Live execution disabled -->
+                            <!-- Robinhood execution disabled -->
                             <rect x="640" y="346" width="240" height="46" rx="12" fill="#f4f4f5" stroke="#9aa0a8" stroke-width="1.5" stroke-dasharray="5,4"></rect>
-                            <text x="760" y="367" text-anchor="middle" font-size="10.5" font-weight="600" fill="#6b7280">Live Execution Layer</text>
-                            <text x="760" y="382" text-anchor="middle" font-size="9" fill="#9aa0a8">disabled — no real broker connected yet</text>
+                            <text x="760" y="367" text-anchor="middle" font-size="10.5" font-weight="600" fill="#6b7280">Robinhood Execution Layer</text>
+                            <text x="760" y="382" text-anchor="middle" font-size="9" fill="#9aa0a8">Built · Disabled · Paper Trading Only</text>
 
                             <!-- Backtesting connector -->
                             <rect x="20" y="346" width="0" height="0"></rect>

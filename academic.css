@@ -104,3 +104,28 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   h1{font-size:34px}
   .list li{grid-template-columns:1fr;gap:2px}
 }
+
+/* Case studies & inner pages */
+.page-head{padding:64px 0 40px}
+.page-head .wrap{max-width:860px}
+.page-head h1{font-size:44px}
+.back{font-size:14px;color:var(--muted)}
+.meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 32px;max-width:860px;margin:0 auto;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.meta-grid dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.meta-grid dd{font-size:15px;color:var(--ink);margin-top:2px}
+.case{max-width:860px;margin:0 auto;padding:0 24px}
+.case section{padding:40px 0;border-top:1px solid var(--line)}
+.case section:first-child{border-top:0}
+.case h2{margin-bottom:14px}
+.case p{max-width:var(--text)}
+.case p+p{margin-top:14px}
+.case ul.bul{max-width:var(--text);padding-left:20px;display:grid;gap:8px}
+.case ul.bul li{color:var(--ink)}
+figure{margin:24px 0}
+figure img,figure video{border:1px solid var(--line);border-radius:6px;width:100%;height:auto;background:var(--surface)}
+figcaption{font-size:14px;color:var(--faint);margin-top:8px}
+.fig-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.callout{border-left:3px solid var(--accent);padding:4px 0 4px 18px;font-family:var(--serif);font-size:21px;line-height:1.45;max-width:var(--text)}
+.note{font-size:14px;color:var(--faint);max-width:var(--text)}
+.proj-list{display:grid;gap:20px;max-width:var(--text)}
+@media (max-width:640px){.meta-grid{grid-template-columns:1fr}.fig-2{grid-template-columns:1fr}.page-head h1{font-size:32px}.case{padding:0 16px}}

@@ -208,3 +208,9 @@ div.pcard .pmeta{color:var(--faint)}
   .path .pimg{display:none}
   .path li.pnext .pbody2{margin-top:0}
 }
+
+/* Interests & methods lists (Home) */
+.tlist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;max-width:760px}
+.tlist li{position:relative;padding-left:18px;font-size:16px;line-height:1.5;color:var(--ink)}
+.tlist li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+@media (max-width:640px){.tlist{grid-template-columns:1fr}}

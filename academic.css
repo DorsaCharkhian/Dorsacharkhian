@@ -151,3 +151,24 @@ ol.steps{max-width:var(--text);padding-left:22px;display:grid;gap:8px;margin:12p
 .fig-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .fig-3 figure{margin:16px 0 0}
 @media (max-width:640px){.fig-3{grid-template-columns:1fr 1fr}}
+
+.pwrap{padding:8px 0 64px}
+.pfilter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;position:sticky;top:64px;background:var(--bg);padding:12px 0;z-index:2;border-bottom:1px solid var(--line)}
+.pfilter button{font:500 14px var(--sans);color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+.pfilter button span{color:var(--faint);margin-left:4px;font-weight:400}
+.pfilter button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.pfilter button.on span{color:#d6e7e5}
+.pgroup{margin-bottom:48px}
+.phead{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.phead p{color:var(--faint);font-size:15px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.pcard{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s}
+a.pcard:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.08);border-color:var(--accent);text-decoration:none}
+.pthumb{aspect-ratio:16/10;background:#111;overflow:hidden}
+.pthumb img{width:100%;height:100%;object-fit:cover;display:block}
+.pbody{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.pbody .tag{font-size:12px;color:var(--faint);letter-spacing:.04em;text-transform:uppercase}
+.pbody h3{font-size:17px;font-weight:600;line-height:1.35;margin:6px 0 6px;color:var(--ink)}
+.pbody p{font-size:15px;color:var(--muted);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.pmeta{margin-top:12px;font-size:13px;color:var(--accent);font-weight:500}
+div.pcard .pmeta{color:var(--faint)}
